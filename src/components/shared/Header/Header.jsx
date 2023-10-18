@@ -1,5 +1,8 @@
 // shared components
 import Brandlogo from "./../Brandlogo/Brandlogo";
+import ThemeChangeBtn from "../ThemeChangeBtn/ThemeChangeBtn";
+import LargeScreenNav from "../LargeScreenNav/LargeScreenNav";
+import MobileMenuBtn from "../MobileMenuBtn/MobileMenuBtn";
 
 // container components
 import InnerContainer from "./../../container/InnerContainer/InnerContainer";
@@ -11,7 +14,6 @@ import useThemeProvider from "../../../hooks/useThemeProvider";
 import brandLogoImage from "./../../../assets/logo/brandlogo.webp";
 import brandLogoImageDark from "./../../../assets/logo/brandlogo-dark.webp";
 import { navigationOptions } from "../../../data/navigationOptions";
-import LargeScreenNav from "../LargeScreenNav/LargeScreenNav";
 
 // Extract the value of theme provider in header component so that we can conditionally pass our logo images in the brand logo component
 
@@ -28,13 +30,23 @@ const Header = () => {
 
       <div className="bg-gradient-to-r from-primary to-primaryLight">
         <InnerContainer>
-          <div className="grid grid-cols-[1fr_2fr_1fr] py-elementGapSm">
+          <div className="block lg:grid lg:grid-cols-[1fr_2fr_1fr] items-center  py-elementGapSm">
             {/* extra empty div for layout purposes - equally divide 3 cols and position them nicely */}
-            <div>&nbsp;</div>
-            <div className="justify-self-center">
+            <div className="hidden lg:block">&nbsp;</div>
+
+            {/* nav bar for large screens */}
+            <div className="hidden lg:justify-self-center lg:block">
               <LargeScreenNav navigationOptions={navigationOptions} />
             </div>
-            <div></div>
+
+            {/* theme change button and mobile nav toggle button */}
+            <div className="flex justify-between items-center lg:justify-self-end">
+              <ThemeChangeBtn />
+
+              <div>
+                <MobileMenuBtn />
+              </div>
+            </div>
           </div>
         </InnerContainer>
       </div>
