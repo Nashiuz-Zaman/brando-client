@@ -7,7 +7,7 @@ export default {
         "2xsm": "360px",
         xsm: "480px",
       },
-      margin: {
+      spacing: {
         sectionGapLg: "11rem",
         sectionGapMd: "9rem",
         elementGapSm: "1.4rem",
@@ -15,11 +15,12 @@ export default {
       },
 
       colors: {
-        primary: "#b91c1c",
-        primaryLight: "#c03333",
+        primary: "#E2142D",
+        primaryLight: "#e52c42",
         textPrimary: "#1C1B1B",
         textMediumLight: "#1c1b1bcc",
         textLight: "#1c1b1b99",
+        lightGray: "#eee",
       },
       fontFamily: {
         raleway: "'Raleway', sans-serif",
