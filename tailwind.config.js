@@ -22,7 +22,7 @@ export default {
         textLight: "#1c1b1b99",
       },
       fontFamily: {
-        poppins: "'Poppins', sans-serif",
+        raleway: "'Raleway', sans-serif",
       },
       borderRadius: {
         default: "8px",
