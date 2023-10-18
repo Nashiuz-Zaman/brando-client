@@ -19,7 +19,7 @@ const ThemeChangeBtn = () => {
   return (
     <button
       onClick={handleThemeClick}
-      className="text-white transition-all duration-200 rounded-default  hover:text-primary flex items-center gap-2 py-1 px-2 hover:bg-white"
+      className="text-white transition-all duration-200 rounded-default active:text-primary active:bg-white lg:hover:text-primary flex items-center gap-2 py-1 px-2 lg:hover:bg-white"
     >
       <span className="font-semibold">Theme</span>{" "}
       {theme === "light" ? (

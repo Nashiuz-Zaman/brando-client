@@ -3,12 +3,15 @@ import Brandlogo from "./../Brandlogo/Brandlogo";
 import ThemeChangeBtn from "../ThemeChangeBtn/ThemeChangeBtn";
 import LargeScreenNav from "../LargeScreenNav/LargeScreenNav";
 import MobileMenuBtn from "../MobileMenuBtn/MobileMenuBtn";
+import MobileNav from "../MobileNav/MobileNav";
 
 // container components
 import InnerContainer from "./../../container/InnerContainer/InnerContainer";
+import OuterContainer from "./../../container/OuterContainer.jsx/OuterContainer";
 
 // hook
 import useThemeProvider from "../../../hooks/useThemeProvider";
+import useMobileNavigation from "../../../hooks/useMobileNavigation";
 
 // data
 import brandLogoImage from "./../../../assets/logo/brandlogo.webp";
@@ -16,10 +19,12 @@ import brandLogoImageDark from "./../../../assets/logo/brandlogo-dark.webp";
 import { navigationOptions } from "../../../data/navigationOptions";
 
 // Extract the value of theme provider in header component so that we can conditionally pass our logo images in the brand logo component
-
 const Header = () => {
   // extract theme value from the custom hook
   const { theme } = useThemeProvider();
+
+  // extract mobile navigation functions and state
+  const { mobileNavOpen, openNav, closeNav } = useMobileNavigation();
 
   return (
     <header>
@@ -29,26 +34,37 @@ const Header = () => {
       />
 
       <div className="bg-gradient-to-r from-primary to-primaryLight">
-        <InnerContainer>
-          <div className="block lg:grid lg:grid-cols-[1fr_2fr_1fr] items-center  py-elementGapSm">
-            {/* extra empty div for layout purposes - equally divide 3 cols and position them nicely */}
-            <div className="hidden lg:block">&nbsp;</div>
+        <OuterContainer>
+          <InnerContainer>
+            <div className="block lg:grid lg:grid-cols-[1fr_2fr_1fr] items-center  py-elementGapSm">
+              {/* extra empty div for layout purposes - equally divide 3 cols and position them nicely */}
+              <div className="hidden lg:block">&nbsp;</div>
 
-            {/* nav bar for large screens */}
-            <div className="hidden lg:justify-self-center lg:block">
-              <LargeScreenNav navigationOptions={navigationOptions} />
-            </div>
+              {/* nav bar for large screens */}
+              <div className="hidden lg:justify-self-center lg:block">
+                <LargeScreenNav navigationOptions={navigationOptions} />
+              </div>
 
-            {/* theme change button and mobile nav toggle button */}
-            <div className="flex justify-between items-center lg:justify-self-end">
-              <ThemeChangeBtn />
+              {/* theme change button and mobile nav toggle button */}
+              <div className="flex justify-between items-center lg:justify-self-end">
+                <ThemeChangeBtn />
 
-              <div>
-                <MobileMenuBtn />
+                {/* mobile nav open btn and profile photo component */}
+                <div className="flex items-center">
+                  <MobileMenuBtn openNavFunction={openNav} />
+                </div>
               </div>
             </div>
-          </div>
-        </InnerContainer>
+          </InnerContainer>
+
+          {/* moble navigation menu - THE MENU WILL OPEN AND CLOSE according to the state extracted from the custom hook */}
+          <MobileNav
+            brandLogoImage={brandLogoImageDark}
+            navigationOptions={navigationOptions}
+            openState={mobileNavOpen}
+            closeNavFunction={closeNav}
+          />
+        </OuterContainer>
       </div>
     </header>
   );
