@@ -12,7 +12,7 @@ const BannerText = ({ textObj = {}, theme = "light" }) => {
   return (
     <div className="text-center lg:text-left">
       {/* heading */}
-      <h1 className="font-bold text-3xl md:text-5xl mb-4 tracking-tight">
+      <h1 className="font-bold text-3xl md:text-5xl mb-5 tracking-tight">
         {heading}
       </h1>
 
@@ -29,8 +29,10 @@ const BannerText = ({ textObj = {}, theme = "light" }) => {
           outlined={true}
           text="Sign up - It's free!"
           url="/register"
-          modifyClasses={`border-textPrimary text-textPrimary font-medium ${
-            theme === "dark" ? "!text-white !border-white" : ""
+          modifyClasses={`font-medium ${
+            theme === "dark"
+              ? "!text-white !border-white"
+              : "!border-textPrimary !text-textPrimary"
           }`}
         />
       </div>

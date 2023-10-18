@@ -1,9 +1,11 @@
 // react import
 import PropTypes from "prop-types";
 
-const FeaturedIn = ({ logos }) => {
+const FeaturedIn = ({ logos = [], modifyClasses = "" }) => {
   return (
-    <div className="flex items-center justify-center gap-10 flex-wrap">
+    <div
+      className={`flex items-center justify-center gap-14 flex-wrap ${modifyClasses}`}
+    >
       {logos.map((logo) => {
         const { id, name, image } = logo;
 
@@ -23,6 +25,7 @@ const FeaturedIn = ({ logos }) => {
 
 FeaturedIn.propTypes = {
   logos: PropTypes.array.isRequired,
+  modifyClasses: PropTypes.string,
 };
 
 export default FeaturedIn;

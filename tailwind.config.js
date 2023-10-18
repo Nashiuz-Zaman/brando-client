@@ -20,7 +20,7 @@ export default {
         textPrimary: "#1C1B1B",
         textMediumLight: "#1c1b1bcc",
         textLight: "#1c1b1b99",
-        lightGray: "#eee",
+        lightGray: "#ddd",
       },
       fontFamily: {
         raleway: "'Raleway', sans-serif",

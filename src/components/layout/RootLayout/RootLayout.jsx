@@ -13,7 +13,7 @@ function RootLayout() {
   return (
     <div
       className={`font-raleway text-textPrimary font-medium ${
-        theme === "light" ? "bg-white" : "bg-black"
+        theme === "light" ? "bg-white" : "bg-textPrimary"
       }`}
     >
       <Header />

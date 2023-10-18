@@ -1,5 +1,7 @@
 // shared components
 import Banner from "../../shared/Banner/Banner";
+import FeaturedIn from "../../shared/FeaturedIn/FeaturedIn";
+import SectionHeading from "../../shared/SectionHeading/SectionHeading";
 
 // container components
 import InnerContainer from "../../container/InnerContainer/InnerContainer";
@@ -9,6 +11,7 @@ import useThemeProvider from "../../../hooks/useThemeProvider";
 
 // data
 import { carouselImages } from "../../../data/carouselData";
+import { logos, logosBlack } from "./../../../data/featuredInData";
 
 const Home = () => {
   // extract the theme from the custom hook
@@ -18,20 +21,24 @@ const Home = () => {
   const bannerTextObj = {
     heading: (
       <>
-        <span className="text-primary">Brando:</span> Elevate Your Style
-        <br className="hidden xsm:inline-block lg:hidden" /> with Iconic Brands
+        <span className="text-primary">Brando:</span> Elevate Your{" "}
+        <br className="hidden xsm:inline-block" />
+        Style with Iconic Brands
       </>
     ),
 
     description: (
       <>
         Discover the latest trends in footwear and fashion from renowned brands
-        <br className="hidden xsm:inline-block" /> like Nike, H&M, Levi's, Zara,
-        and more.
+        <br className="hidden xsm:inline-block" /> like Nike, H&M, Levi&apos;s,
+        Zara, and more.
       </>
     ),
     btnText: "Shop Now",
   };
+
+  // featured in section heading
+  const featuredInHeading = "Featured in";
 
   return (
     <div>
@@ -42,6 +49,20 @@ const Home = () => {
             textObj={bannerTextObj}
             carouselData={carouselImages}
             theme={theme}
+          />
+        </InnerContainer>
+      </section>
+
+      {/* featured in section */}
+      <section className="mb-sectionGapLg">
+        <InnerContainer>
+          <SectionHeading
+            text={featuredInHeading}
+            modifyClasses="mb-elementGapMd"
+          />
+          <FeaturedIn
+            logos={theme === "light" ? logos : logosBlack}
+            modifyClasses={theme === "dark" && "filter-white"}
           />
         </InnerContainer>
       </section>

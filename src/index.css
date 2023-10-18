@@ -8,3 +8,8 @@
 .active {
   @apply border-x-2 border-white;
 }
+
+.filter-white {
+  filter: invert(100%) sepia(1%) saturate(7497%) hue-rotate(259deg)
+    brightness(100%) contrast(103%);
+}
