@@ -120,6 +120,23 @@ const Home = () => {
         </OuterContainer>
       </section>
 
+      {/* Newsletter section*/}
+      <section className="mb-sectionGapMd md:mb-sectionGapLg">
+        <InnerContainer>
+          <SectionHeading
+            text={newsletterHeading}
+            modifyClasses="mb-elementGapSm"
+          />
+          <Description
+            text={newsletterDescription}
+            modifyClasses={`md:w-3/4 lg:w-1/2 mx-auto mb-elementGapSm ${
+              theme === "dark" ? "!text-white" : ""
+            }`}
+          />
+          <NewsLetter />
+        </InnerContainer>
+      </section>
+
       {/* today's story section */}
       <section className="mb-sectionGapMd md:mb-sectionGapLg">
         <OuterContainer>
@@ -139,23 +156,6 @@ const Home = () => {
             </div>
           </div>
         </OuterContainer>
-      </section>
-
-      {/* Newsletter section*/}
-      <section className="mb-sectionGapMd md:mb-sectionGapLg">
-        <InnerContainer>
-          <SectionHeading
-            text={newsletterHeading}
-            modifyClasses="mb-elementGapSm"
-          />
-          <Description
-            text={newsletterDescription}
-            modifyClasses={`md:w-3/4 lg:w-1/2 mx-auto mb-elementGapSm ${
-              theme === "dark" ? "!text-white" : ""
-            }`}
-          />
-          <NewsLetter />
-        </InnerContainer>
       </section>
     </div>
   );
