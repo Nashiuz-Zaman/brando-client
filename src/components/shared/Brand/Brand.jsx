@@ -11,7 +11,7 @@ const Brand = ({ brand }) => {
     <div>
       <Link className="flex flex-col items-center" to={url}>
         {/* logo */}
-        <div className="w-[15rem] h-[10rem] mb-elementGapSm">
+        <div className="w-[15rem] h-[10rem] mb-[1.5rem] md:mb-elementGapSm">
           <img
             className="block w-full h-full object-contain"
             src={image}

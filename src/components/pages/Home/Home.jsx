@@ -7,6 +7,7 @@ import FeaturedIn from "../../shared/FeaturedIn/FeaturedIn";
 import SectionHeading from "../../shared/SectionHeading/SectionHeading";
 import ClipDesign from "../../shared/ClipDesign/ClipDesign";
 import Brands from "../../shared/Brands/Brands";
+import Video from "../../shared/Video/Video";
 
 // container components
 import InnerContainer from "../../container/InnerContainer/InnerContainer";
@@ -18,6 +19,7 @@ import useThemeProvider from "../../../hooks/useThemeProvider";
 // data
 import { carouselImages } from "../../../data/carouselData";
 import { logos, logosBlack } from "./../../../data/featuredInData";
+import nikeVideo from "./../../../assets/video/nikead.mp4";
 
 const Home = () => {
   // extract the theme from the custom hook
@@ -52,6 +54,9 @@ const Home = () => {
 
   // brands section heading
   const brandsHeading = "Our Brands";
+
+  // todays story section heading
+  const storyHeading = "Today's Story";
 
   // home components jsx starts here
   return (
@@ -89,11 +94,32 @@ const Home = () => {
             modifyClasses="mb-elementGapMd"
           />
 
-          <div className="w-full relative pb-[3rem]">
-            <ClipDesign modifyClasses="hidden clip1 md:block" />
+          <div className="w-full relative pb-elementGapMd">
+            <ClipDesign modifyClasses="clip1" />
             <InnerContainer>
               <Brands brands={brands} />
             </InnerContainer>
+          </div>
+        </OuterContainer>
+      </section>
+
+      {/* today's story section */}
+      <section className="mb-sectionGapMd md:mb-sectionGapLg">
+        <OuterContainer>
+          <div className="w-full h-full relative py-elementGapMd">
+            {/* two clip paths are working here for different screen sizes */}
+            <ClipDesign modifyClasses="hidden clip2 md:block" />
+            <ClipDesign modifyClasses="block clip3 md:hidden" />
+
+            <SectionHeading
+              text={storyHeading}
+              modifyClasses="mb-elementGapMd text-white relative z-20"
+            />
+            <div className="relative z-20">
+              <InnerContainer>
+                <Video videoSource={nikeVideo} />
+              </InnerContainer>
+            </div>
           </div>
         </OuterContainer>
       </section>

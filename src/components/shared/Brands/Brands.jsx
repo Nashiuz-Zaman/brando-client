@@ -8,7 +8,7 @@ import Brand from "../Brand/Brand";
 const Brands = ({ brands = [] }) => {
   return (
     <div className="bg-lightGray relative z-10 ">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-y-elementGapMd py-elementGapMd">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-10 md:gap-y-elementGapMd py-elementGapMd">
         {/* single brand */}
         {brands.map((brand) => {
           return <Brand key={brand.id} brand={brand} />;
