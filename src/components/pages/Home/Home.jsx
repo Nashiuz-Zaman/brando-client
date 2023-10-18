@@ -38,12 +38,12 @@ const Home = () => {
   };
 
   // featured in section heading
-  const featuredInHeading = "Featured in";
+  const featuredInHeading = "Featured In";
 
   return (
     <div>
       {/* banner section */}
-      <section className="mt-[2rem] lg:mt-[5rem] mb-sectionGapLg">
+      <section className="mt-[1.5rem] lg:mt-[5rem] mb-sectionGapMd md:mb-sectionGapLg">
         <InnerContainer>
           <Banner
             textObj={bannerTextObj}
@@ -54,7 +54,7 @@ const Home = () => {
       </section>
 
       {/* featured in section */}
-      <section className="mb-sectionGapLg">
+      <section className="mb-sectionGapMd md:mb-sectionGapLg">
         <InnerContainer>
           <SectionHeading
             text={featuredInHeading}
@@ -66,6 +66,9 @@ const Home = () => {
           />
         </InnerContainer>
       </section>
+
+      {/* brands section */}
+      <section></section>
     </div>
   );
 };
