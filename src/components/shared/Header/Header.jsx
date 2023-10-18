@@ -28,7 +28,7 @@ const Header = () => {
 
       <div className="bg-gradient-to-r from-primary to-primaryLight">
         <InnerContainer>
-          <div className="grid grid-cols-3 py-elementGapSm">
+          <div className="grid grid-cols-[1fr_2fr_1fr] py-elementGapSm">
             {/* extra empty div for layout purposes - equally divide 3 cols and position them nicely */}
             <div>&nbsp;</div>
             <div className="justify-self-center">
