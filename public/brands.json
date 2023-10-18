@@ -1,0 +1,38 @@
+[
+  {
+    "id": 0,
+    "name": "Nike",
+    "image": "https://i.ibb.co/gZZKNwx/nike.webp",
+    "url": "/brands/nike"
+  },
+  {
+    "id": 1,
+    "name": "Zara",
+    "image": "https://i.ibb.co/FwLMTTk/zara.webp",
+    "url": "/brands/zara"
+  },
+  {
+    "id": 2,
+    "name": "Levi's",
+    "image": "https://i.ibb.co/PZSzBS1/levis.webp",
+    "url": "/brands/levis"
+  },
+  {
+    "id": 3,
+    "name": "H&M",
+    "image": "https://i.ibb.co/GVp9sSh/hnm.webp",
+    "url": "/brands/hnm"
+  },
+  {
+    "id": 4,
+    "name": "Adidas",
+    "image": "https://i.ibb.co/9qbyWsN/adidas.webp",
+    "url": "/brands/adidas"
+  },
+  {
+    "id": 5,
+    "name": "Puma",
+    "image": "https://i.ibb.co/W31pNnb/puma.webp",
+    "url": "/brands/puma"
+  }
+]
