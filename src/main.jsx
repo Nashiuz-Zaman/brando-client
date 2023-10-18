@@ -8,11 +8,16 @@ import { RouterProvider } from "react-router-dom";
 // router import
 import router from "./router/router";
 
+// context provider
+import ThemeProvider from "./Providers/ThemeProvider";
+
 // style import
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <ThemeProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
