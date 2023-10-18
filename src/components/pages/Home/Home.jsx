@@ -8,6 +8,8 @@ import SectionHeading from "../../shared/SectionHeading/SectionHeading";
 import ClipDesign from "../../shared/ClipDesign/ClipDesign";
 import Brands from "../../shared/Brands/Brands";
 import Video from "../../shared/Video/Video";
+import NewsLetter from "../../shared/NewsLetter/NewsLetter";
+import Description from "./../../shared/Description/Description";
 
 // container components
 import InnerContainer from "../../container/InnerContainer/InnerContainer";
@@ -54,9 +56,16 @@ const Home = () => {
 
   // brands section heading
   const brandsHeading = "Our Brands";
+  const brandsDescription =
+    "Discover Fashion's Best! Explore our curated collection of top clothing and footwear brands. From the latest trends to timeless classics, find your perfect style here.";
 
   // todays story section heading
   const storyHeading = "Today's Story";
+
+  // newsletter section heading
+  const newsletterHeading = "Join Our Newsletter!";
+  const newsletterDescription =
+    "Catch the Hottest Offers! Subscribe to our newsletter to receive exclusive deals, discounts, and promotions delivered straight to your inbox. Just enter your email below and hit the 'Sign Up' button to stay in the loop on the latest and greatest savings.";
 
   // home components jsx starts here
   return (
@@ -89,10 +98,18 @@ const Home = () => {
       {/* brands section */}
       <section className="mb-sectionGapMd md:mb-sectionGapLg">
         <OuterContainer>
-          <SectionHeading
-            text={brandsHeading}
-            modifyClasses="mb-elementGapMd"
-          />
+          <InnerContainer>
+            <SectionHeading
+              text={brandsHeading}
+              modifyClasses="mb-elementGapSm"
+            />
+            <Description
+              text={brandsDescription}
+              modifyClasses={`md:w-3/4 lg:w-1/2 mx-auto mb-elementGapSm ${
+                theme === "dark" ? "!text-white" : ""
+              }`}
+            />
+          </InnerContainer>
 
           <div className="w-full relative pb-elementGapMd">
             <ClipDesign modifyClasses="clip1" />
@@ -122,6 +139,23 @@ const Home = () => {
             </div>
           </div>
         </OuterContainer>
+      </section>
+
+      {/* Newsletter section*/}
+      <section className="mb-sectionGapMd md:mb-sectionGapLg">
+        <InnerContainer>
+          <SectionHeading
+            text={newsletterHeading}
+            modifyClasses="mb-elementGapSm"
+          />
+          <Description
+            text={newsletterDescription}
+            modifyClasses={`md:w-3/4 lg:w-1/2 mx-auto mb-elementGapSm ${
+              theme === "dark" ? "!text-white" : ""
+            }`}
+          />
+          <NewsLetter />
+        </InnerContainer>
       </section>
     </div>
   );
