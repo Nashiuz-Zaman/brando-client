@@ -22,7 +22,7 @@ const Footer = ({
 
         {/* footer navigation */}
         <nav className="mb-12">
-          <ul className="flex flex-col items-center gap-4 md:flex-row md:justify-center">
+          <ul className="flex flex-col items-center gap-2 md:flex-row md:justify-center">
             {navigationOptions.map((option) => {
               const { id, text, url } = option;
               return (

@@ -36,7 +36,7 @@ const LargeScreenNav = ({ navigationOptions }) => {
         <li>
           <NavLink
             className="leading-[normal] px-2 border-x-2 border-transparent hover:border-white text-white font-medium transition-all duration-200"
-            to="/login"
+            to="/register"
           >
             Register
           </NavLink>
