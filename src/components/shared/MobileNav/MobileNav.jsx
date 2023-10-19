@@ -19,7 +19,7 @@ const MobileNav = ({
   logOutFunction = null,
 }) => {
   return (
-    <div
+    <nav
       className={`block lg:hidden h-screen fixed top-0 right-0 w-full -translate-x-full transition-all duration-300 z-20 ${
         openState ? "!translate-x-0" : ""
       } text-center p-8 bg-gradient-to-br from-primary to-primaryLight`}
@@ -85,7 +85,7 @@ const MobileNav = ({
           />
         </div>
       )}
-    </div>
+    </nav>
   );
 };
 
