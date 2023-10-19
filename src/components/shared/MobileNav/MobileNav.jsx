@@ -77,12 +77,14 @@ const MobileNav = ({
             {user.displayName || "Unknown User"}
           </p>
 
-          <ButtonBtn
-            outlined={true}
-            onClickFunction={logOutFunction}
-            text="Log Out"
-            modifyClasses="mx-auto"
-          />
+          <div onClick={closeNavFunction}>
+            <ButtonBtn
+              outlined={true}
+              onClickFunction={logOutFunction}
+              text="Log Out"
+              modifyClasses="mx-auto"
+            />
+          </div>
         </div>
       )}
     </nav>

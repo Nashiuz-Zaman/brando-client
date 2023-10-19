@@ -95,7 +95,7 @@ const Home = () => {
       </section>
 
       {/* brands section */}
-      <section className="mb-sectionGapMd md:mb-sectionGapLg">
+      <section id="explore" className="mb-sectionGapMd md:mb-sectionGapLg">
         <OuterContainer>
           <InnerContainer>
             <SectionHeading
