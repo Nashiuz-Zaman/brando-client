@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import { createContext, useState } from "react";
 
 // create the context
-export const RegistrationContext = createContext();
+export const LoginRegistrationContext = createContext();
 
-const RegistrationProvider = ({ children }) => {
+const LoginRegistratonProvider = ({ children }) => {
+  // registration STATES
   // set to true when the submit button has been clicked to show errors only when the submission has happened
   const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -19,22 +20,37 @@ const RegistrationProvider = ({ children }) => {
     errors: [],
   });
 
-  const registrationObj = {
+  // login STATES
+  // states of the form input boxes
+  const [loginInfo, setLoginInfo] = useState({
+    email: "",
+    password: "",
+    showSuccessToast: false,
+  });
+
+  // error state
+  const [loginError, setLoginError] = useState("");
+
+  const valueObj = {
     registrationInfo,
     setFormSubmitted,
     setRegistrationInfo,
     formSubmitted,
+    loginInfo,
+    setLoginInfo,
+    loginError,
+    setLoginError,
   };
 
   return (
-    <RegistrationContext.Provider value={registrationObj}>
+    <LoginRegistrationContext.Provider value={valueObj}>
       {children}
-    </RegistrationContext.Provider>
+    </LoginRegistrationContext.Provider>
   );
 };
 
-RegistrationProvider.propTypes = {
+LoginRegistratonProvider.propTypes = {
   children: PropTypes.any.isRequired,
 };
 
-export default RegistrationProvider;
+export default LoginRegistratonProvider;

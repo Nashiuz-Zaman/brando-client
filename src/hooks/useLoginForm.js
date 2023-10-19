@@ -1,31 +1,23 @@
-// react imports
-import { useState } from "react";
-
 // react router dom imports
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 // custom hook
 import useAuthContext from "./useAuthContext";
+import useLoginRegistrationProvider from "./useLoginRegistrationProvider";
 
 const useLoginForm = () => {
   // extract functions from auth context
   const { SignInUser, setAppLoading, signInWithGoogle } = useAuthContext();
+
+  const { loginInfo, setLoginInfo, loginError, setLoginError } =
+    useLoginRegistrationProvider();
 
   // create the navigation function
   const navigate = useNavigate();
 
   // extract state value from use location hook
   const { state } = useLocation();
-
-  // states of the form input boxes
-  const [loginInfo, setLoginInfo] = useState({
-    email: "",
-    password: "",
-  });
-
-  // error state
-  const [error, setError] = useState("");
 
   // on change run this function for email field
   const getEmail = (e) => {
@@ -57,16 +49,31 @@ const useLoginForm = () => {
 
     SignInUser(loginInfo.email, loginInfo.password)
       .then(() => {
-        // if there is state navigate to that state or navigate to home page
-        if (state) {
-          navigate(state);
-        } else {
-          navigate("/");
-        }
+        // if login successful then show success toast first and then set timer to navigate to the target page after a certain time
+        setLoginInfo((prev) => {
+          return { ...prev, showSuccessToast: true };
+        });
+
+        // set the timer and clear the timer
+        const timer = setTimeout(() => {
+          setLoginInfo((prev) => {
+            return { ...prev, showSuccessToast: false };
+          });
+
+          // if there is state navigate to that state or navigate to home page
+          if (state) {
+            navigate(state);
+          } else {
+            navigate("/");
+          }
+
+          // clear the timeout
+          clearTimeout(timer);
+        }, 2600);
       })
       // handle error
       .catch((error) => {
-        setError(error.message);
+        setLoginError(error.message);
         setAppLoading(false);
       });
   };
@@ -76,7 +83,7 @@ const useLoginForm = () => {
     getEmail,
     getPassword,
     handleSubmit,
-    error,
+    loginError,
     handleGoogleSignIn,
   };
 };

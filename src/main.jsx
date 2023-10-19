@@ -11,7 +11,7 @@ import router from "./router/router";
 // context provider
 import ThemeProvider from "./Providers/ThemeProvider";
 import AuthProvider from "./Providers/AuthProvider";
-import RegistrationProvider from "./Providers/RegistrationProvider";
+import LoginRegistratonProvider from "./Providers/LoginRegistrationProvider";
 
 // style import
 import "./index.css";
@@ -19,11 +19,11 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      <RegistrationProvider>
+      <LoginRegistratonProvider>
         <ThemeProvider>
           <RouterProvider router={router}></RouterProvider>
         </ThemeProvider>
-      </RegistrationProvider>
+      </LoginRegistratonProvider>
     </AuthProvider>
   </React.StrictMode>
 );

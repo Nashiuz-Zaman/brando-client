@@ -8,14 +8,8 @@ import ButtonBtn from "./../ButtonBtn/ButtonBtn";
 import useLoginForm from "../../../hooks/useLoginForm";
 
 const LoginForm = () => {
-  const {
-    loginInfo,
-    getEmail,
-    getPassword,
-    handleSubmit,
-    error,
-    handleGoogleSignIn,
-  } = useLoginForm();
+  const { loginInfo, getEmail, getPassword, handleSubmit, handleGoogleSignIn } =
+    useLoginForm();
 
   // common styles for input and label jsx elements
   const labelClasses = "block mb-2 text-sm";

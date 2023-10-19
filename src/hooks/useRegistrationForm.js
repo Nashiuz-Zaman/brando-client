@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 // custom hooks import
 import useAuthContext from "./useAuthContext";
-import useRegistrationProvider from "./useRegistrationProvider";
+import useLoginRegistrationProvider from "./useLoginRegistrationProvider";
 
 // custom hook body starts here
 const useRegistrationForm = () => {
@@ -11,12 +11,13 @@ const useRegistrationForm = () => {
   const { createUser, updateUser, setAppLoading, signOutUser } =
     useAuthContext();
 
+  // extract functions from login and registration context
   const {
     registrationInfo,
     setFormSubmitted,
     setRegistrationInfo,
     formSubmitted,
-  } = useRegistrationProvider();
+  } = useLoginRegistrationProvider();
 
   // create the navigate function
   const navigate = useNavigate();
@@ -85,7 +86,7 @@ const useRegistrationForm = () => {
             .then(() => {
               // after successful registration logout and redirect user to login page
               signOutUser().then(() => {
-                // if registration successful then show success toast first and then set timer to navigate to home page after 1.5 seconds
+                // if registration successful then show success toast first and then set timer to navigate to home page after a certain time
                 setRegistrationInfo((prev) => {
                   return { ...prev, showSuccessToast: true };
                 });

@@ -13,9 +13,7 @@ const LoginSuccessToast = ({ show = false }) => {
     >
       <IoCheckmarkCircle className="text-green-600 text-5xl" />
 
-      <p className="text-green-600 font-semibold text">
-        Logged In Successfully
-      </p>
+      <p className="text-green-600 font-semibold text">Login Successful</p>
     </div>
   );
 };
