@@ -8,7 +8,7 @@ const Brandlogo = ({ logo, modifyClasses = "" }) => {
   return (
     <div className={`py-elementGapSm w-max mx-auto ${modifyClasses}`}>
       <Link className="block w-full h-full" to="/">
-        <img className="block h-8" src={logo} alt="Brand Logo" />
+        <img className="block h-9" src={logo} alt="Brand Logo" />
       </Link>
     </div>
   );
