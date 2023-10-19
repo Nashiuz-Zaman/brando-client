@@ -6,11 +6,13 @@ import RootLayout from "../components/layout/RootLayout/RootLayout";
 
 // page components
 import Home from "../components/pages/Home/Home";
+import ErrorPage from "../components/pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
