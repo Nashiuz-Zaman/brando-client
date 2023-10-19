@@ -10,9 +10,11 @@ import Login from "../components/pages/Login/Login";
 import Register from "../components/pages/Registration/Registration";
 import ErrorPage from "../components/pages/ErrorPage/ErrorPage";
 import AddProduct from "../components/pages/AddProduct/AddProduct";
+import BrandDetails from "../components/pages/BrandDetails/BrandDetails";
 
 // route component
 import PrivateRoute from "../components/route/PrivateRoute/PrivateRoute";
+import Test from "../components/pages/test/test";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,21 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/test",
+        element: <Test />,
+      },
+      {
+        path: "/brands/:id",
+        element: (
+          <PrivateRoute>
+            <BrandDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) => {
+          return fetch(`http://localhost:5000/brands/${params.id}`);
+        },
       },
       {
         path: "/add-product",

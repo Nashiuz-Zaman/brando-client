@@ -8,8 +8,10 @@ import { IoVolumeHigh, IoVolumeMute } from "react-icons/io5";
 const Video = ({ videoSource }) => {
   const [sound, setSound] = useState(false);
 
+  /* https://smoothshadows.com/#djEsMSw1LDAuMDgsMjQsMzIsMCwjMDMwNzEyLCNmM2Y0ZjYsI2ZmZmZmZiwy */
+
   return (
-    <div className="w-full h-full aspect-[16/20] md:aspect-[16/6] relative">
+    <div className="w-full h-full aspect-[16/20] md:aspect-[16/6] relative shadow-2xl">
       <video
         className="w-full h-full object-cover"
         muted={sound ? false : true}
