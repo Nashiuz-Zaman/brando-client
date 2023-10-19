@@ -1,3 +1,6 @@
+// react import
+import PropTypes from "prop-types";
+
 // shared components
 import Brandlogo from "./../Brandlogo/Brandlogo";
 import ThemeChangeBtn from "../ThemeChangeBtn/ThemeChangeBtn";
@@ -10,28 +13,20 @@ import InnerContainer from "./../../container/InnerContainer/InnerContainer";
 import OuterContainer from "./../../container/OuterContainer.jsx/OuterContainer";
 
 // hook
-import useThemeProvider from "../../../hooks/useThemeProvider";
 import useMobileNavigation from "../../../hooks/useMobileNavigation";
 
 // data
-import brandLogoImage from "./../../../assets/logo/brandlogo.webp";
 import brandLogoImageDark from "./../../../assets/logo/brandlogo-dark.webp";
-import { navigationOptions } from "../../../data/navigationOptions";
 
 // Extract the value of theme provider in header component so that we can conditionally pass our logo images in the brand logo component
-const Header = () => {
-  // extract theme value from the custom hook
-  const { theme } = useThemeProvider();
-
+const Header = ({ logo = "", navigationOptions = [] }) => {
   // extract mobile navigation functions and state
   const { mobileNavOpen, openNav, closeNav } = useMobileNavigation();
 
   return (
     <header>
       {/* conditionally pass the logo image variants */}
-      <Brandlogo
-        logo={theme === "light" ? brandLogoImage : brandLogoImageDark}
-      />
+      <Brandlogo logo={logo} />
 
       <div className="bg-gradient-to-r from-primary to-primaryLight">
         <OuterContainer>
@@ -68,6 +63,11 @@ const Header = () => {
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  logo: PropTypes.string.isRequired,
+  navigationOptions: PropTypes.array.isRequired,
 };
 
 export default Header;

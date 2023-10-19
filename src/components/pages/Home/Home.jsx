@@ -29,7 +29,6 @@ const Home = () => {
 
   // retreive data from loader
   const brands = useLoaderData();
-  console.log(brands);
 
   // make the text object which contains text for the banner component
   const bannerTextObj = {

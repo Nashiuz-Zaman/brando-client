@@ -7,8 +7,8 @@ import { NavLink } from "react-router-dom";
 const LargeScreenNav = ({ navigationOptions }) => {
   return (
     // these links are coming from the navigation options data file
-    <>
-      <ul className="flex gap-6 ">
+    <nav>
+      <ul className="flex gap-6">
         {navigationOptions &&
           navigationOptions.map((option) => {
             return (
@@ -42,7 +42,7 @@ const LargeScreenNav = ({ navigationOptions }) => {
           </NavLink>
         </li>
       </ul>
-    </>
+    </nav>
   );
 };
 
