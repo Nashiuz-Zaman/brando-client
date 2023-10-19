@@ -6,6 +6,8 @@ import RootLayout from "../components/layout/RootLayout/RootLayout";
 
 // page components
 import Home from "../components/pages/Home/Home";
+import Login from "../components/pages/Login/Login";
+import Register from "../components/pages/Registration/Registration";
 import ErrorPage from "../components/pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
         loader: () => {
           return fetch("/brands.json");
         },
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
       },
     ],
   },
