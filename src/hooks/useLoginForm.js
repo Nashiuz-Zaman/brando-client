@@ -61,6 +61,7 @@ const useLoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoginError(null);
 
     SignInUser(loginInfo.email, loginInfo.password)
       .then(() => {
@@ -88,13 +89,15 @@ const useLoginForm = () => {
       })
       // handle error
       .catch((error) => {
-        setLoginError(error.message);
+        setLoginError("Email/Password doesn't match. Try again.");
+        console.error(error.message);
         setAppLoading(false);
       });
   };
 
   return {
     loginInfo,
+    setLoginInfo,
     getEmail,
     getPassword,
     handleSubmit,

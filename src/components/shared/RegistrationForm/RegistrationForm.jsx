@@ -1,5 +1,6 @@
 // react imports
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 
 // react router import
 import { Link } from "react-router-dom";
@@ -13,6 +14,7 @@ import ButtonBtn from "./../ButtonBtn/ButtonBtn";
 const RegistrationForm = ({ theme }) => {
   const {
     registrationInfo,
+    setRegistrationInfo,
     getUsername,
     getEmail,
     getPassword,
@@ -20,6 +22,19 @@ const RegistrationForm = ({ theme }) => {
     handleSubmit,
     formSubmitted,
   } = useRegistrationForm();
+
+  useEffect(() => {
+    return () => {
+      setRegistrationInfo({
+        email: "",
+        password: "",
+        username: "",
+        photoUrl: "",
+        showSuccessToast: false,
+        errors: [],
+      });
+    };
+  }, [setRegistrationInfo]);
 
   // common styles for input and label jsx elements
   const labelClasses = "block mb-2 text-sm text-inherit";
@@ -97,7 +112,7 @@ const RegistrationForm = ({ theme }) => {
           <div className="space-y-4 mt-4">
             {registrationInfo.errors.map((error) => {
               return (
-                <p key={error} className="text-sm text-primaryLight">
+                <p key={error} className="text-sm text-red-600">
                   *{error}
                 </p>
               );

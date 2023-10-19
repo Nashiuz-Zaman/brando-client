@@ -79,8 +79,6 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  console.log(user);
-
   // pass all the necessary things to the context provider through an object
   const authObj = {
     user,

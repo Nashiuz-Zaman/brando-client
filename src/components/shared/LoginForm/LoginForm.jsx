@@ -1,5 +1,6 @@
 // react imports
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 
 // react router import
 import { Link } from "react-router-dom";
@@ -12,8 +13,25 @@ import GoogleLoginBtn from "./../GoogleLoginBtn/GoogleLoginBtn";
 import useLoginForm from "../../../hooks/useLoginForm";
 
 const LoginForm = ({ theme }) => {
-  const { loginInfo, getEmail, getPassword, handleSubmit, handleGoogleSignIn } =
-    useLoginForm();
+  const {
+    loginInfo,
+    setLoginInfo,
+    getEmail,
+    getPassword,
+    handleSubmit,
+    handleGoogleSignIn,
+    loginError,
+  } = useLoginForm();
+
+  useEffect(() => {
+    return () => {
+      setLoginInfo({
+        email: "",
+        password: "",
+        showSuccessToast: false,
+      });
+    };
+  }, [setLoginInfo]);
 
   // common styles for input and label jsx elements
   const labelClasses = "block mb-2 text-sm text-inherit";
@@ -40,7 +58,7 @@ const LoginForm = ({ theme }) => {
         </div>
 
         {/* password field */}
-        <div className="mb-10">
+        <div className="">
           <label className={labelClasses} htmlFor="password">
             Password
           </label>
@@ -54,8 +72,11 @@ const LoginForm = ({ theme }) => {
             required
           />
         </div>
+        {loginError !== null && (
+          <p className="mt-4 text-red-600 text-center">{loginError}</p>
+        )}
 
-        <ButtonBtn text="Log In" modifyClasses="w-full block mb-4" />
+        <ButtonBtn text="Log In" modifyClasses="w-full block mt-10 mb-4" />
         <p className="text-sm text-center">
           Don&apos;t have an account?{" "}
           <Link className="text-primary font-semibold" to={"/register"}>

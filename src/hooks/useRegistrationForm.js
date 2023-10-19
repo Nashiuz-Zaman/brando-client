@@ -117,6 +117,7 @@ const useRegistrationForm = () => {
 
   return {
     registrationInfo,
+    setRegistrationInfo,
     getUsername,
     getEmail,
     getPassword,

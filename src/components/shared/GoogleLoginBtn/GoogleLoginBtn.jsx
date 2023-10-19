@@ -16,9 +16,7 @@ const GoogleLoginBtn = ({ onClickFunction, modifyClasses = "" }) => {
 };
 
 GoogleLoginBtn.propTypes = {
-  text: PropTypes.string.isRequired,
   onClickFunction: PropTypes.func,
-  outlined: PropTypes.bool,
   modifyClasses: PropTypes.string,
 };
 
