@@ -102,11 +102,14 @@ const useRegistrationForm = () => {
               });
             })
             // handle error
-            .catch((error) => console.log(error));
+            .catch((error) => {
+              console.error(error);
+              setAppLoading(false);
+            });
         })
         // handle error
         .catch((error) => {
-          console.log(error);
+          console.error(error);
           setAppLoading(false);
         });
     }

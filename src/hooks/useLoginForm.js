@@ -33,12 +33,27 @@ const useLoginForm = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then(() => {
-        // if there is state navigate to that state or navigate to home page
-        if (state) {
-          navigate(state);
-        } else {
-          navigate("/");
-        }
+        // if login successful then show success toast first and then set timer to navigate to the target page after a certain time
+        setLoginInfo((prev) => {
+          return { ...prev, showSuccessToast: true };
+        });
+
+        // set the timer and clear the timer
+        const timer = setTimeout(() => {
+          setLoginInfo((prev) => {
+            return { ...prev, showSuccessToast: false };
+          });
+
+          // if there is state navigate to that state or navigate to home page
+          if (state) {
+            navigate(state);
+          } else {
+            navigate("/");
+          }
+
+          // clear the timeout
+          clearTimeout(timer);
+        }, 2600);
       })
       // handle error
       .catch((error) => console.log(error));

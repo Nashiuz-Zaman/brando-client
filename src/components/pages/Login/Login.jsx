@@ -5,15 +5,19 @@ import LoginSuccessToast from "../../shared/LoginSuccessToast/LoginSuccessToast"
 
 // hook
 import useLoginForm from "../../../hooks/useLoginForm";
+import useThemeProvider from "../../../hooks/useThemeProvider";
 
 const Login = () => {
+  // extract theme info
+  const { theme } = useThemeProvider();
+
   // extract loginInfo state from this hook so that we can pass the toast show/hide state in success toast component below
   const { loginInfo } = useLoginForm();
   return (
-    <section className="my-sectionGapSm">
+    <section className="my-sectionGapSm !text-white">
       <LoginSuccessToast show={loginInfo.showSuccessToast} />
       <SectionHeading modifyClasses="mb-4" text={"Log In To Your Account"} />
-      <LoginForm />
+      <LoginForm theme={theme} />
     </section>
   );
 };

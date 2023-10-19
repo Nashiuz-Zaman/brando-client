@@ -1,3 +1,6 @@
+// react imports
+import PropTypes from "prop-types";
+
 // react router import
 import { Link } from "react-router-dom";
 
@@ -7,7 +10,7 @@ import useRegistrationForm from "../../../hooks/useRegistrationForm";
 // shared component imports
 import ButtonBtn from "./../ButtonBtn/ButtonBtn";
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ theme }) => {
   const {
     registrationInfo,
     getUsername,
@@ -18,15 +21,13 @@ const RegistrationForm = () => {
     formSubmitted,
   } = useRegistrationForm();
 
-  console.log(registrationInfo);
-
   // common styles for input and label jsx elements
-  const labelClasses = "block mb-2 text-sm";
+  const labelClasses = "block mb-2 text-sm text-inherit";
   const inputClasses =
     "block w-full rounded-default border border-textLight py-2 px-2";
 
   return (
-    <div>
+    <div className={`${theme === "light" ? "text-textPrimary" : "text-white"}`}>
       <form onSubmit={handleSubmit} className="w-full md:w-[20rem] mx-auto p-4">
         {/* username field */}
         <div className="mb-4">
@@ -116,4 +117,7 @@ const RegistrationForm = () => {
   );
 };
 
+RegistrationForm.propTypes = {
+  theme: PropTypes.string,
+};
 export default RegistrationForm;
