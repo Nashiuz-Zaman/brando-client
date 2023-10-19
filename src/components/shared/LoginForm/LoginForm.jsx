@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 // shared component imports
 import ButtonBtn from "./../ButtonBtn/ButtonBtn";
+import GoogleLoginBtn from "./../GoogleLoginBtn/GoogleLoginBtn";
 
 // custom hooks
 import useLoginForm from "../../../hooks/useLoginForm";
@@ -59,10 +60,10 @@ const LoginForm = () => {
           </Link>
         </p>
       </form>
-      <ButtonBtn
+
+      <GoogleLoginBtn
         onClickFunction={handleGoogleSignIn}
-        text="Sign In With Google"
-        modifyClasses="mx-auto mt-6 border border-primary bg-white !text-primary hover:bg-white"
+        modifyClasses="w-max mx-auto"
       />
     </div>
   );

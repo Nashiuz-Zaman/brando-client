@@ -19,7 +19,7 @@ function RootLayout() {
 
   return (
     <div
-      className={`font-raleway text-textPrimary font-medium ${
+      className={`flex flex-col min-h-screen font-raleway text-textPrimary font-medium ${
         theme === "light" ? "bg-white" : "bg-textPrimary"
       }`}
     >
