@@ -17,7 +17,9 @@ const BrandDetails = () => {
 
   // getting data for the products specific to brands
   useEffect(() => {
-    fetch(`http://localhost:5000/brands/${id}/products`)
+    fetch(
+      `https://brand-shop-server-5aee4s461-nashiuz-zamans-projects.vercel.app/brands/${id}/products`
+    )
       .then((res) => res.json())
       .then((data) => {
         setProductsData(data);

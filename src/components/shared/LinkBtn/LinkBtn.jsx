@@ -42,8 +42,8 @@ const LinkBtn = ({
 };
 
 LinkBtn.propTypes = {
-  text: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  text: PropTypes.string,
+  url: PropTypes.string,
   outlined: PropTypes.bool,
   hashed: PropTypes.bool,
   modifyClasses: PropTypes.string,

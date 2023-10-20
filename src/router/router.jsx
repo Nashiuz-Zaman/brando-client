@@ -44,7 +44,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/brands/${params.id}`);
+          return fetch(
+            `https://brand-shop-server-5aee4s461-nashiuz-zamans-projects.vercel.app/brands/${params.id}`
+          );
         },
       },
       {
