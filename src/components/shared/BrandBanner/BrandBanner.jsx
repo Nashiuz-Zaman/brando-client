@@ -13,7 +13,7 @@ const BrandBanner = ({ brand = {}, modifyClasses = "" }) => {
       {/* brand related text */}
       <div className="order-2 md:order-1">
         {/* logo */}
-        <div className="w-[10rem] h-[7rem] mb-2 mx-auto">
+        <div className="w-[10rem] h-[7rem] mb-3 mx-auto">
           <img
             className="w-full h-full object-contain"
             src={logo}
@@ -35,7 +35,7 @@ const BrandBanner = ({ brand = {}, modifyClasses = "" }) => {
       </div>
 
       {/* brand related ads */}
-      <div className="order-1 md:order-2">
+      <div className="order-1 md:order-2 shadow-xl">
         <Carousel images={brandAds} />
       </div>
     </div>

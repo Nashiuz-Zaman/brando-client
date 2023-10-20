@@ -16,7 +16,7 @@ const Banner = ({ textObj = {}, carouselData = [], theme = "light" }) => {
         <BannerText textObj={textObj} theme={theme} />
       </div>
 
-      <div className="order-1 lg:order-2">
+      <div className="order-1 lg:order-2 shadow-xl">
         <Carousel images={carouselData} />
       </div>
     </div>
