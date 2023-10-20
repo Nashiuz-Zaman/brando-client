@@ -11,6 +11,8 @@ import useAuthContext from "./../../../hooks/useAuthContext";
 
 // data
 import { vercelAddress } from "./../../../data/vercelServerData";
+import visacardImage from "./../../../assets/logo/visa.svg";
+import mastercardImage from "./../../../assets/logo/mastercard.svg";
 
 const ProductDetailsCard = ({ productData }) => {
   // extract product info
@@ -84,6 +86,37 @@ const ProductDetailsCard = ({ productData }) => {
             <span className="text-primary font-bold">Rating:</span> {rating} out
             of 5
           </p>
+        </div>
+
+        <div className="mb-5">
+          <p className="text-primary font-bold mb-3">Colors Available:</p>
+          <div className="flex items-baseline gap-2 mb-6">
+            <div className="w-[2rem] aspect-square rounded-full bg-red-700"></div>
+            <div className="w-[2rem] aspect-square rounded-full bg-gray-700"></div>
+            <div className="w-[2rem] aspect-square rounded-full bg-textPrimary"></div>
+            <div className="w-[2rem] aspect-square rounded-full bg-blue-700"></div>
+            <div className="w-[2rem] aspect-square rounded-full bg-green-700"></div>
+          </div>
+          <p>
+            Note: Please note that actual product may vary slightly from the
+            depiction in the photo
+          </p>
+
+          <div className="mt-5">
+            <p className="font-bold text-primary mb-1">We accept</p>
+            <div className="flex items-center">
+              <img
+                className="block w-[3rem]"
+                src={visacardImage}
+                alt="visa card icon"
+              />
+              <img
+                className="block w-[3rem]"
+                src={mastercardImage}
+                alt="master card icon"
+              />
+            </div>
+          </div>
         </div>
 
         <div className="space-y-4 mt-auto">
