@@ -19,8 +19,6 @@ const MyCart = () => {
 
   // delete function
   const handleDelete = (id) => {
-    console.log(id);
-
     fetch(`${vercelAddress}/cart/${id}`, {
       method: "DELETE",
     })

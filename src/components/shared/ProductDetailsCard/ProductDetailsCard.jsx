@@ -1,7 +1,10 @@
+// react
 import PropTypes from "prop-types";
+import { useState } from "react";
 
 // shared componetns
 import ButtonBtn from "../ButtonBtn/ButtonBtn";
+import CartSuccessToast from "../CartSuccessToast/CartSuccessToast";
 
 // custom hook
 import useAuthContext from "./../../../hooks/useAuthContext";
@@ -10,8 +13,12 @@ import useAuthContext from "./../../../hooks/useAuthContext";
 import { vercelAddress } from "./../../../data/vercelServerData";
 
 const ProductDetailsCard = ({ productData }) => {
+  // extract product info
   const { imageSource, name, brandName, type, price, rating } = productData;
+  // declare the state for the toast
+  const [showCartSuccessToast, setShowCartSuccessToast] = useState(false);
 
+  // extract user info
   const { user } = useAuthContext();
 
   const handleAddToCart = () => {
@@ -30,11 +37,25 @@ const ProductDetailsCard = ({ productData }) => {
       body: JSON.stringify(item),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          setShowCartSuccessToast(true);
+
+          const timer = setTimeout(() => {
+            setShowCartSuccessToast(false);
+            clearTimeout(timer);
+          }, 2000);
+        }
+      })
+      .catch((error) => console.error(error));
   };
 
   return (
     <div className="bg-lightGray rounded-default p-6 shadow-lg grid md:grid-cols-2 md:gap-8">
+      {/* toast */}
+      <CartSuccessToast show={showCartSuccessToast} />
+
       <div className="aspect-square lg:h-[30rem] mb-5 md:mb-0 lg:mx-auto">
         <img
           className="w-full h-full object-cover"
