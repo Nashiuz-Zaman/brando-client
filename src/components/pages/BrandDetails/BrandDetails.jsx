@@ -10,6 +10,9 @@ import InnerContainer from "../../container/InnerContainer/InnerContainer";
 import { useState, useEffect } from "react";
 import { useParams, useLoaderData } from "react-router-dom";
 
+// data
+import { vercelAddress } from "../../../data/vercelServerData";
+
 const BrandDetails = () => {
   const brandData = useLoaderData();
   const [productsData, setProductsData] = useState(null);
@@ -17,9 +20,7 @@ const BrandDetails = () => {
 
   // getting data for the products specific to brands
   useEffect(() => {
-    fetch(
-      `https://brand-shop-server-5aee4s461-nashiuz-zamans-projects.vercel.app/brands/${id}/products`
-    )
+    fetch(`${vercelAddress}/brands/${id}/products`)
       .then((res) => res.json())
       .then((data) => {
         setProductsData(data);

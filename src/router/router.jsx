@@ -11,9 +11,13 @@ import Register from "../components/pages/Registration/Registration";
 import ErrorPage from "../components/pages/ErrorPage/ErrorPage";
 import AddProduct from "../components/pages/AddProduct/AddProduct";
 import BrandDetails from "../components/pages/BrandDetails/BrandDetails";
+import UpdateProduct from "../components/pages/UpdateProduct/UpdateProduct";
 
 // route component
 import PrivateRoute from "../components/route/PrivateRoute/PrivateRoute";
+
+// data
+import { vercelAddress } from "../data/vercelServerData";
 
 const router = createBrowserRouter([
   {
@@ -44,10 +48,16 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) => {
-          return fetch(
-            `https://brand-shop-server-5aee4s461-nashiuz-zamans-projects.vercel.app/brands/${params.id}`
-          );
+          return fetch(`${vercelAddress}/brands/${params.id}`);
         },
+      },
+      {
+        path: "/brands/:brandId/products/update/:productId",
+        element: (
+          <PrivateRoute>
+            <UpdateProduct />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/add-product",

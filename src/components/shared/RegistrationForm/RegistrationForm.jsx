@@ -42,7 +42,7 @@ const RegistrationForm = () => {
   // common styles for input and label jsx elements
   const labelClasses = "block mb-2 text-sm text-inherit";
   const inputClasses =
-    "block w-full rounded-default border border-textLight py-2 px-2";
+    "block w-full rounded-default border border-textLight py-2 px-2 text-textPrimary";
 
   return (
     <div className={`${theme === "light" ? "text-textPrimary" : "text-white"}`}>

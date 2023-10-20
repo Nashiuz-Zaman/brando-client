@@ -4,7 +4,7 @@ import AddProductForm from "../../shared/AddProductForm/AddProductForm";
 
 const AddProduct = () => {
   return (
-    <section className="my-sectionGapSm !text-white">
+    <section className="my-sectionGapSm">
       <SectionHeading modifyClasses="mb-4" text={"Add Products"} />
       <AddProductForm />
     </section>

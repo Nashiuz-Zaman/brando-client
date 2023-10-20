@@ -43,7 +43,7 @@ const BrandBanner = ({ brand = {}, modifyClasses = "" }) => {
 };
 
 BrandBanner.propTypes = {
-  brand: PropTypes.object.isRequired,
+  brand: PropTypes.object,
   modifyClasses: PropTypes.string,
 };
 
