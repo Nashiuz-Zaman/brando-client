@@ -2,6 +2,7 @@
 import BrandBanner from "../../shared/BrandBanner/BrandBanner";
 import ProductCards from "../../shared/ProductCards/ProductCards";
 import SectionHeading from "./../../shared/SectionHeading/SectionHeading";
+import LinkBtn from "../../shared/LinkBtn/LinkBtn";
 
 // container components
 import InnerContainer from "../../container/InnerContainer/InnerContainer";
@@ -15,7 +16,7 @@ import { vercelAddress } from "../../../data/vercelServerData";
 
 const BrandDetails = () => {
   const brandData = useLoaderData();
-  const [productsData, setProductsData] = useState(null);
+  const [productsData, setProductsData] = useState([]);
   const { id } = useParams();
 
   // getting data for the products specific to brands
@@ -46,7 +47,19 @@ const BrandDetails = () => {
             text={`All Products (${productsData ? productsData.length : 0})`}
             modifyClasses="mb-elementGapMd"
           />
-          {productsData && <ProductCards products={productsData} />}
+          {productsData.length === 0 && (
+            <div className="bg-lightGray rounded-default w-max mx-auto p-6 space-y-6">
+              <p className="text-3xl mx-auto text-center">
+                We apologize, at the moment no products are available
+              </p>
+              <LinkBtn
+                text={"Back to Home"}
+                modifyClasses="w-max mx-auto"
+                url={"/"}
+              />
+            </div>
+          )}
+          {productsData.length > 0 && <ProductCards products={productsData} />}
         </InnerContainer>
       </section>
     </div>
