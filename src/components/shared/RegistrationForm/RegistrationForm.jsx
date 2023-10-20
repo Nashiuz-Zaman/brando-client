@@ -1,5 +1,5 @@
 // react imports
-import PropTypes from "prop-types";
+
 import { useEffect } from "react";
 
 // react router import
@@ -7,11 +7,14 @@ import { Link } from "react-router-dom";
 
 // custom hooks import
 import useRegistrationForm from "../../../hooks/useRegistrationForm";
+import useThemeProvider from "../../../hooks/useThemeProvider";
 
 // shared component imports
 import ButtonBtn from "./../ButtonBtn/ButtonBtn";
 
-const RegistrationForm = ({ theme }) => {
+const RegistrationForm = () => {
+  const { theme } = useThemeProvider();
+
   const {
     registrationInfo,
     setRegistrationInfo,
@@ -132,7 +135,4 @@ const RegistrationForm = ({ theme }) => {
   );
 };
 
-RegistrationForm.propTypes = {
-  theme: PropTypes.string,
-};
 export default RegistrationForm;
