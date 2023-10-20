@@ -40,7 +40,7 @@ const BrandDetails = () => {
       </section>
 
       {/* products section */}
-      <section className="mb-sectionGapMd md:mb-sectionGapLg">
+      <section id="explore" className="mb-sectionGapMd md:mb-sectionGapLg">
         <InnerContainer>
           <SectionHeading
             text={`All Products (${productsData && productsData.length})`}

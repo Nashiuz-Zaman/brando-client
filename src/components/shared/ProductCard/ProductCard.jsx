@@ -5,7 +5,7 @@ const ProductCard = ({ product }) => {
   const { _id, imageSource, name, brandName, type, price, rating } = product;
 
   return (
-    <div className="bg-lightGray rounded-default p-6">
+    <div className="bg-lightGray rounded-default p-6 shadow-lg">
       <div className="aspect-square mb-5">
         <img
           className="w-full h-full object-cover"

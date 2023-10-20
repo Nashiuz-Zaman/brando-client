@@ -30,6 +30,7 @@ const BrandBanner = ({ brand = {}, modifyClasses = "" }) => {
         <LinkBtn
           text="See Collection"
           modifyClasses="w-max mx-auto"
+          hashed={true}
           url={`/brands/${brandName}/#explore`}
         />
       </div>

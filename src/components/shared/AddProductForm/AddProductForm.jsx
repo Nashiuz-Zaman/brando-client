@@ -1,11 +1,18 @@
 // shared
 import ButtonBtn from "../ButtonBtn/ButtonBtn";
 
+// react router
+import { useNavigate } from "react-router-dom";
+
 // custom hooks
 import useThemeProvider from "../../../hooks/useThemeProvider";
 
+// data
+import { vercelAddress } from "../../../data/vercelServerData";
+
 const AddProductForm = () => {
   const { theme } = useThemeProvider();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,7 +21,7 @@ const AddProductForm = () => {
 
     const imageSource = form.image.value;
     const name = form.name.value;
-    const brandName = form.brandName.value;
+    const brandName = form.brandName.value.toLowerCase();
     const type = form.type.value;
     const price = form.price.value;
     const rating = form.rating.value;
@@ -28,18 +35,20 @@ const AddProductForm = () => {
       rating,
     };
 
-    fetch(
-      `https://brand-shop-server-5aee4s461-nashiuz-zamans-projects.vercel.app/brands/${brandName.toLowerCase()}/products`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(product),
-      }
-    )
+    fetch(`${vercelAddress}/brands/${brandName.toLowerCase()}/products`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.insertedId) {
+          form.reset();
+          navigate(`/brands/${brandName.toLowerCase()}`);
+        }
+      });
   };
 
   // common styles for input and label jsx elements
