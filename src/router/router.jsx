@@ -13,6 +13,7 @@ import AddProduct from "../components/pages/AddProduct/AddProduct";
 import BrandDetails from "../components/pages/BrandDetails/BrandDetails";
 import UpdateProduct from "../components/pages/UpdateProduct/UpdateProduct";
 import ProductDetails from "../components/pages/ProductDetails/ProductDetails";
+import MyCart from "../components/pages/MyCart/MyCart";
 
 // route component
 import PrivateRoute from "../components/route/PrivateRoute/PrivateRoute";
@@ -61,6 +62,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddProduct />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/my-cart",
+        element: (
+          <PrivateRoute>
+            <MyCart />
           </PrivateRoute>
         ),
       },

@@ -43,7 +43,7 @@ const BrandDetails = () => {
       <section id="explore" className="mb-sectionGapMd md:mb-sectionGapLg">
         <InnerContainer>
           <SectionHeading
-            text={`All Products (${productsData && productsData.length})`}
+            text={`All Products (${productsData ? productsData.length : 0})`}
             modifyClasses="mb-elementGapMd"
           />
           {productsData && <ProductCards products={productsData} />}

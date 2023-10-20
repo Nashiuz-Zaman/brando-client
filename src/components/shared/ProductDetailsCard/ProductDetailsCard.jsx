@@ -22,7 +22,7 @@ const ProductDetailsCard = ({ productData }) => {
       productData,
     };
 
-    fetch(`${vercelAddress}/cart`, {
+    fetch(`${vercelAddress}/cart/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

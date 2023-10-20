@@ -1,5 +1,4 @@
 // react imports
-import PropTypes from "prop-types";
 import { useEffect } from "react";
 
 // react router import
@@ -11,8 +10,10 @@ import GoogleLoginBtn from "./../GoogleLoginBtn/GoogleLoginBtn";
 
 // custom hooks
 import useLoginForm from "../../../hooks/useLoginForm";
+import useThemeProvider from "../../../hooks/useThemeProvider";
 
-const LoginForm = ({ theme }) => {
+const LoginForm = () => {
+  const { theme } = useThemeProvider();
   const {
     loginInfo,
     setLoginInfo,
@@ -39,7 +40,9 @@ const LoginForm = ({ theme }) => {
     "block w-full rounded-default border border-textLight py-2 px-2 text-textPrimary";
 
   return (
-    <div className={`${theme === "light" ? "text-textPrimary" : "text-white"}`}>
+    <div
+      className={`${theme === "light" ? "!text-textPrimary" : "text-white"}`}
+    >
       <form onSubmit={handleSubmit} className="w-full md:w-[20rem] mx-auto p-4">
         {/* email field */}
         <div className="mb-4">
@@ -91,10 +94,6 @@ const LoginForm = ({ theme }) => {
       />
     </div>
   );
-};
-
-LoginForm.propTypes = {
-  theme: PropTypes.string,
 };
 
 export default LoginForm;

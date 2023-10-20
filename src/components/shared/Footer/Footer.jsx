@@ -60,7 +60,7 @@ const Footer = ({
         </ul>
 
         <p className="text-white text-center">
-          <small>&copy; {year} Brando, all rights reserved</small>
+          <small>&copy; {year} Brando, by Nashiuz Zaman</small>
         </p>
       </InnerContainer>
     </footer>
