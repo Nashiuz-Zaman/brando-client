@@ -14,7 +14,6 @@ import BrandDetails from "../components/pages/BrandDetails/BrandDetails";
 
 // route component
 import PrivateRoute from "../components/route/PrivateRoute/PrivateRoute";
-import Test from "../components/pages/test/test";
 
 const router = createBrowserRouter([
   {
@@ -36,10 +35,6 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
-      },
-      {
-        path: "/test",
-        element: <Test />,
       },
       {
         path: "/brands/:id",
