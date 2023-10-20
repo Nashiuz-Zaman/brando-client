@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
           Brand: {brandName === "hnm" ? "H&M" : brandName}
         </p>
         <p>Type: {type}</p>
-        <p>Price: {price}</p>
+        <p>Price: ${price}</p>
         <p>Rating: {rating}</p>
       </div>
 

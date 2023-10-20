@@ -1,2 +1,2 @@
 export const vercelAddress =
-  "https://brand-shop-server-fvvvzbbwq-nashiuz-zamans-projects.vercel.app";
+  "https://brand-shop-server-bejf0m7cg-nashiuz-zamans-projects.vercel.app";

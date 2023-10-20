@@ -12,6 +12,7 @@ import ErrorPage from "../components/pages/ErrorPage/ErrorPage";
 import AddProduct from "../components/pages/AddProduct/AddProduct";
 import BrandDetails from "../components/pages/BrandDetails/BrandDetails";
 import UpdateProduct from "../components/pages/UpdateProduct/UpdateProduct";
+import ProductDetails from "../components/pages/ProductDetails/ProductDetails";
 
 // route component
 import PrivateRoute from "../components/route/PrivateRoute/PrivateRoute";
@@ -42,11 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/brands/:id",
-        element: (
-          <PrivateRoute>
-            <BrandDetails />
-          </PrivateRoute>
-        ),
+        element: <BrandDetails />,
         loader: ({ params }) => {
           return fetch(`${vercelAddress}/brands/${params.id}`);
         },
@@ -66,6 +63,22 @@ const router = createBrowserRouter([
             <AddProduct />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/brands/:brandId/products/details/:productId",
+        element: (
+          <PrivateRoute>
+            <ProductDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) => {
+          // extract both the params
+          const brandId = params.brandId;
+          const productId = params.productId;
+          return fetch(
+            `${vercelAddress}/brands/${brandId}/products/${productId}`
+          );
+        },
       },
     ],
   },

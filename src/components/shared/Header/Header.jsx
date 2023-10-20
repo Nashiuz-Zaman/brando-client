@@ -37,12 +37,12 @@ const Header = ({ logo = "", navigationOptions = [] }) => {
       <div className="bg-gradient-to-r from-primary to-primaryLight">
         <OuterContainer>
           <InnerContainer>
-            <div className="block lg:grid lg:grid-cols-3 xl:grid-cols-[1.5fr_2fr_1.5fr] items-center  py-elementGapSm">
+            <div className="block lg:grid lg:grid-cols-2 items-center  py-elementGapSm">
               {/* extra empty div for layout purposes - equally divide 3 cols and position them nicely */}
-              <div className="hidden lg:block">&nbsp;</div>
+              {/* <div className="hidden lg:block">&nbsp;</div> */}
 
               {/* large screen navbar */}
-              <div className="hidden lg:justify-self-center lg:block">
+              <div className="hidden lg:block">
                 <LargeScreenNav
                   navigationOptions={navigationOptions}
                   user={user}
