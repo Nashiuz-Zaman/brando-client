@@ -10,10 +10,12 @@ import Brands from "../../shared/Brands/Brands";
 import Video from "../../shared/Video/Video";
 import NewsLetter from "../../shared/NewsLetter/NewsLetter";
 import Description from "./../../shared/Description/Description";
+import ThreeImageShowcase from "../../shared/ThreeImageShowcase/ThreeImageShowcase";
 
 // container components
 import InnerContainer from "../../container/InnerContainer/InnerContainer";
 import OuterContainer from "./../../container/OuterContainer.jsx/OuterContainer";
+import CenterContainer from "./../../container/CenterContainer/CenterContainer";
 
 // hooks
 import useThemeProvider from "../../../hooks/useThemeProvider";
@@ -21,8 +23,10 @@ import useThemeProvider from "../../../hooks/useThemeProvider";
 // data
 import { carouselImages } from "../../../data/carouselData";
 import { logos, logosBlack } from "./../../../data/featuredInData";
+import { saleImages } from "../../../data/saleData";
 import nikeVideo from "./../../../assets/video/nikead.mp4";
 
+// home jsx component starts here
 const Home = () => {
   // extract the theme from the custom hook
   const { theme } = useThemeProvider();
@@ -50,7 +54,7 @@ const Home = () => {
     btnText: "Shop Now",
   };
 
-  // featured in section heading
+  // featured in section text information
   const featuredInHeading = "Featured In";
 
   // brands section heading
@@ -58,10 +62,13 @@ const Home = () => {
   const brandsDescription =
     "Discover Fashion's Best! Explore our curated collection of top clothing and footwear brands. From the latest trends to timeless classics, find your perfect style here.";
 
-  // todays story section heading
+  // sale section text information
+  const salesHeading = "Upcoming Sales";
+
+  // todays story section text information
   const storyHeading = "Today's Story";
 
-  // newsletter section heading
+  // newsletter section text information
   const newsletterHeading = "Join Our Newsletter!";
   const newsletterDescription =
     "Catch the Hottest Offers! Subscribe to our newsletter to receive exclusive deals, discounts, and promotions delivered straight to your inbox. Just enter your email below and hit the 'Sign Up' button to stay in the loop on the latest and greatest savings.";
@@ -119,21 +126,13 @@ const Home = () => {
         </OuterContainer>
       </section>
 
-      {/* Newsletter section*/}
+      {/* sales section */}
       <section className="mb-sectionGapMd md:mb-sectionGapLg">
-        <InnerContainer>
-          <SectionHeading
-            text={newsletterHeading}
-            modifyClasses="mb-elementGapSm"
-          />
-          <Description
-            text={newsletterDescription}
-            modifyClasses={`md:w-3/4 lg:w-1/2 mx-auto mb-elementGapSm ${
-              theme === "dark" ? "!text-white" : ""
-            }`}
-          />
-          <NewsLetter />
-        </InnerContainer>
+        <SectionHeading text={salesHeading} modifyClasses="mb-elementGapMd" />
+
+        <CenterContainer>
+          <ThreeImageShowcase images={saleImages} />
+        </CenterContainer>
       </section>
 
       {/* today's story section */}
@@ -155,6 +154,23 @@ const Home = () => {
             </div>
           </div>
         </OuterContainer>
+      </section>
+
+      {/* Newsletter section*/}
+      <section className="mb-sectionGapMd md:mb-sectionGapLg">
+        <InnerContainer>
+          <SectionHeading
+            text={newsletterHeading}
+            modifyClasses="mb-elementGapSm"
+          />
+          <Description
+            text={newsletterDescription}
+            modifyClasses={`md:w-3/4 lg:w-1/2 mx-auto mb-elementGapSm ${
+              theme === "dark" ? "!text-white" : ""
+            }`}
+          />
+          <NewsLetter />
+        </InnerContainer>
       </section>
     </div>
   );

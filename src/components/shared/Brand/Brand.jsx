@@ -9,7 +9,10 @@ const Brand = ({ brand }) => {
 
   return (
     <div>
-      <Link className="flex flex-col items-center" to={url}>
+      <Link
+        className="flex flex-col items-center hover:scale-[1.1] transition-all duration-300"
+        to={url}
+      >
         {/* logo */}
         <div className="w-[15rem] h-[10rem] mb-[1.5rem] md:mb-elementGapSm">
           <img
