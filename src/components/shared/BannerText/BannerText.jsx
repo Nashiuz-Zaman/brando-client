@@ -32,7 +32,7 @@ const BannerText = ({ textObj = {}, theme = "light" }) => {
           modifyClasses={`font-medium ${
             theme === "dark"
               ? "!text-white !border-white"
-              : "!border-textPrimary !text-textPrimary"
+              : "!border-primary !text-primary"
           }`}
         />
       </div>

@@ -11,6 +11,7 @@ import Video from "../../shared/Video/Video";
 import NewsLetter from "../../shared/NewsLetter/NewsLetter";
 import Description from "./../../shared/Description/Description";
 import ThreeImageShowcase from "../../shared/ThreeImageShowcase/ThreeImageShowcase";
+import ThreeGridShowcase from "../../shared/ThreeGridShowcase/ThreeGridShowcase";
 
 // container components
 import InnerContainer from "../../container/InnerContainer/InnerContainer";
@@ -24,6 +25,7 @@ import useThemeProvider from "../../../hooks/useThemeProvider";
 import { carouselImages } from "../../../data/carouselData";
 import { logos, logosBlack } from "./../../../data/featuredInData";
 import { saleImages } from "../../../data/saleData";
+import { sportsAdsData } from "../../../data/sportsAdsData";
 import nikeVideo from "./../../../assets/video/nikead.mp4";
 
 // home jsx component starts here
@@ -67,6 +69,9 @@ const Home = () => {
 
   // todays story section text information
   const storyHeading = "Today's Story";
+
+  // todays story section text information
+  const sportsAdsHeading = "Get Your Gear";
 
   // newsletter section text information
   const newsletterHeading = "Join Our Newsletter!";
@@ -154,6 +159,17 @@ const Home = () => {
             </div>
           </div>
         </OuterContainer>
+      </section>
+
+      {/* sports brands ad section */}
+      <section className="mb-sectionGapMd md:mb-sectionGapLg">
+        <CenterContainer>
+          <SectionHeading
+            text={sportsAdsHeading}
+            modifyClasses="mb-elementGapMd"
+          />
+          <ThreeGridShowcase images={sportsAdsData} />
+        </CenterContainer>
       </section>
 
       {/* Newsletter section*/}

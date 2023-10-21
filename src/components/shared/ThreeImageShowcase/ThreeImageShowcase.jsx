@@ -5,21 +5,21 @@ const ThreeImageShowcase = ({ images = {} }) => {
 
   return (
     <div className="grid gap-elementGapMd md:grid-cols-[1.4fr_1fr_1fr] md:gap-3 lg:gap-5">
-      <div className="shadow-xl">
+      <div className="shadow-lg">
         <img
           className="w-full h-full object-cover"
           src={image1}
           alt="sale offer image"
         />
       </div>
-      <div className="md:col-span-2 shadow-xl">
+      <div className="md:col-span-2 shadow-lg">
         <img
           className="w-full h-full object-cover"
           src={image2}
           alt="sale offer image"
         />
       </div>
-      <div className="md:col-span-3 shadow-xl">
+      <div className="md:col-span-3 shadow-lg">
         <img
           className="w-full h-full object-cover"
           src={image3}
