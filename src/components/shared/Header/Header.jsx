@@ -32,7 +32,7 @@ const Header = ({ logo = "", navigationOptions = [] }) => {
   return (
     <header>
       {/* conditionally pass the logo image variants */}
-      <Brandlogo logo={logo} />
+      <Brandlogo logo={logo} modifyClasses="py-elementGapMd" />
 
       <div className="bg-gradient-to-r from-primary to-primaryLight">
         <OuterContainer>

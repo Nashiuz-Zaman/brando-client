@@ -13,6 +13,7 @@ import { navigationOptions } from "../../../data/navigationOptions";
 import { socialmediaOptions } from "../../../data/socialMediaData";
 import brandlogo from "./../../../assets/logo/brandlogo.webp";
 import brandlogoDark from "./../../../assets/logo/brandlogo-dark.webp";
+import { addressData } from "../../../data/addressData";
 
 function RootLayout() {
   const { theme } = useThemeProvider();
@@ -30,6 +31,7 @@ function RootLayout() {
       <Outlet />
       <Footer
         logo={brandlogoDark}
+        addressData={addressData}
         navigationOptions={navigationOptions}
         socialMediaOptions={socialmediaOptions}
       />

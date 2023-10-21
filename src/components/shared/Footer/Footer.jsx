@@ -6,23 +6,35 @@ import { Link } from "react-router-dom";
 
 // shared component imports
 import Brandlogo from "../Brandlogo/Brandlogo";
+import Address from "../Address/Address";
+
+// container components
 import InnerContainer from "../../container/InnerContainer/InnerContainer";
 
+// get the current year
 const year = new Date().getFullYear();
 
 const Footer = ({
   logo = "",
+  addressData = {},
   navigationOptions = [],
   socialMediaOptions = [],
 }) => {
   return (
     <footer className="bg-primary py-14 mt-auto">
       <InnerContainer>
-        <Brandlogo logo={logo} />
+        <Brandlogo logo={logo} modifyClasses="mb-12" />
+        {/* footer nav heading */}
+        <h3 className="text-white text-center mb-3 font-bold text-2xl">
+          Headquarters
+        </h3>
+        <Address addressData={addressData} modifyClasses="mb-12 text-center" />
 
+        {/* footer nav heading */}
+        <h3 className="text-white text-center mb-3 font-bold text-2xl">Menu</h3>
         {/* footer navigation */}
-        <nav className="mb-12">
-          <ul className="flex flex-col items-center gap-2 md:flex-row md:justify-center">
+        <nav className="mb-14">
+          <ul className="flex flex-col items-center xsm:flex-row justify-center gap-2">
             {navigationOptions.map((option) => {
               const { id, text, url } = option;
               return (
@@ -43,7 +55,7 @@ const Footer = ({
           Follow Us
         </h3>
         {/* social media logos */}
-        <ul className="flex items-center justify-center gap-8 mb-8">
+        <ul className="flex items-center justify-center gap-8 mb-12">
           {socialMediaOptions.map((option) => {
             const { id, image, url, title } = option;
 
@@ -69,6 +81,7 @@ const Footer = ({
 
 Footer.propTypes = {
   logo: PropTypes.string.isRequired,
+  addressData: PropTypes.object,
   navigationOptions: PropTypes.array.isRequired,
   socialMediaOptions: PropTypes.array.isRequired,
 };
