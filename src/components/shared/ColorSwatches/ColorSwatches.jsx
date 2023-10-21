@@ -5,7 +5,7 @@ const ColorSwatches = ({ modifyClasses = "" }) => {
   return (
     <div className={`${modifyClasses}`}>
       <p className="text-primary font-bold mb-2">Colors Available:</p>
-      <div className={"flex items-center gap-2 mb-6"}>
+      <div className={"flex items-center gap-2 mb-5"}>
         <div className="w-[2rem] aspect-square rounded-full bg-textPrimary"></div>
         <div className="w-[2rem] aspect-square rounded-full border border-[#bbb] bg-white"></div>
         <div className="w-[2rem] aspect-square rounded-full bg-red-700"></div>

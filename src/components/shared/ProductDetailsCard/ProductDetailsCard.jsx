@@ -7,6 +7,7 @@ import ButtonBtn from "../ButtonBtn/ButtonBtn";
 import CartSuccessToast from "../CartSuccessToast/CartSuccessToast";
 import PaymentOptionLogos from "../PaymentOptionLogos/PaymentOptionLogos";
 import ColorSwatches from "../ColorSwatches/ColorSwatches";
+import ProductInfo from "../ProductInfo/ProductInfo";
 
 // custom hook
 import useAuthContext from "./../../../hooks/useAuthContext";
@@ -16,16 +17,16 @@ import { vercelAddress } from "./../../../data/vercelServerData";
 
 const ProductDetailsCard = ({ productData }) => {
   // extract product info
-  const { imageSource, name, brandName, type, price, rating } = productData;
+  const { imageSource, name } = productData;
   // declare the state for the toast
   const [showCartSuccessToast, setShowCartSuccessToast] = useState(false);
 
   // extract user info
   const { user } = useAuthContext();
 
+  // this function handles adding to cart
   const handleAddToCart = () => {
     const addedBy = user.email;
-
     const item = {
       addedBy,
       productData,
@@ -67,29 +68,10 @@ const ProductDetailsCard = ({ productData }) => {
       </div>
 
       <div className="flex flex-col">
-        <div className="space-y-1 mb-5 lg:text-xl">
-          <p className="capitalize">
-            <span className="text-primary font-bold">Brand:</span>{" "}
-            {brandName === "hnm" ? (
-              "H&M"
-            ) : (
-              <span className="capitalize">{brandName}</span>
-            )}
-          </p>
-          <p>
-            <span className="text-primary font-bold">Type:</span> {type}
-          </p>
-          <p>
-            <span className="text-primary font-bold">Price:</span> ${price}
-          </p>
-          <p>
-            <span className="text-primary font-bold">Rating:</span> {rating} out
-            of 5
-          </p>
-        </div>
+        <ProductInfo productData={productData} modifyClasses="mb-6" />
 
         <div className="mb-5">
-          <ColorSwatches />
+          <ColorSwatches modifyClasses="mb-6" />
           <PaymentOptionLogos modifyClasses="mt-5" />
         </div>
 

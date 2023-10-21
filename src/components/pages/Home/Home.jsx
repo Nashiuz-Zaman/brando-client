@@ -104,13 +104,13 @@ const Home = () => {
             />
             <Description
               text={brandsDescription}
-              modifyClasses={`md:w-3/4 lg:w-1/2 mx-auto mb-elementGapSm ${
+              modifyClasses={`md:w-3/4 lg:w-1/2 mx-auto mb-elementGapMd ${
                 theme === "dark" ? "!text-white" : ""
               }`}
             />
           </InnerContainer>
 
-          <div className="w-full relative pb-elementGapMd">
+          <div className="w-full relative pb-[6rem]">
             <ClipDesign modifyClasses="clip1" />
             <InnerContainer>
               <Brands brands={brands} />
