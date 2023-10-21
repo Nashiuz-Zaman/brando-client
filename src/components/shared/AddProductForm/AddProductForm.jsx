@@ -24,6 +24,7 @@ const AddProductForm = () => {
     const brandName = form.brandName.value.toLowerCase();
     const type = form.type.value;
     const price = form.price.value;
+    const shortDescription = form.description.value;
     const rating = form.rating.value;
 
     const product = {
@@ -32,6 +33,7 @@ const AddProductForm = () => {
       brandName,
       type,
       price,
+      shortDescription,
       rating,
     };
 
@@ -130,6 +132,20 @@ const AddProductForm = () => {
             placeholder="Price"
             required
           />
+        </div>
+
+        {/* short description field */}
+        <div className="mb-4">
+          <label className={labelClasses} htmlFor="description">
+            Short Description
+          </label>
+          <textarea
+            className={inputClasses}
+            id="description"
+            name="description"
+            placeholder="Short Description"
+            required
+          ></textarea>
         </div>
 
         {/* rating name field */}
