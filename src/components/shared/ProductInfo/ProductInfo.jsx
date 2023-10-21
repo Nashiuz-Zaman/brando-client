@@ -10,7 +10,7 @@ const ProductInfo = ({ productData = {}, modifyClasses = "" }) => {
   const ratingGiven = Math.round(parseFloat(rating));
 
   return (
-    <div className={`space-y-1 lg:text-lg ${modifyClasses}`}>
+    <div className={`space-y-1 lg:text-base ${modifyClasses}`}>
       <p className="capitalize">
         <span className="text-primary font-bold">Brand:</span>{" "}
         {brandName === "hnm" ? (

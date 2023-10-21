@@ -22,8 +22,6 @@ const UpdateProduct = () => {
       .then((data) => setProductInfo(data));
   }, [brandId, productId]);
 
-  console.log(productInfo);
-
   return (
     <section className="my-sectionGapSm">
       <SectionHeading modifyClasses="mb-4" text={"Update Products"} />

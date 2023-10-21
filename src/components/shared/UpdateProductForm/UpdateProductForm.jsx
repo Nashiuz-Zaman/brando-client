@@ -102,15 +102,20 @@ const UpdateProductForm = ({ initialProduct }) => {
           <label className={labelClasses} htmlFor="brandName">
             Brand Name
           </label>
-          <input
-            className={inputClasses}
-            type="text"
-            id="brandName"
-            defaultValue={brandName}
+          <select
             name="brandName"
-            placeholder="Brand Name"
+            id="brandName"
+            className={inputClasses}
+            defaultValue={brandName}
             required
-          />
+          >
+            <option value="nike">Nike</option>
+            <option value="zara">Zara</option>
+            <option value="levis">Levi&apos;s</option>
+            <option value="hnm">H&M</option>
+            <option value="adidas">Adidas</option>
+            <option value="puma">Puma</option>
+          </select>
         </div>
 
         {/* type field */}

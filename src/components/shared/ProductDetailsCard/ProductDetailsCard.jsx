@@ -68,8 +68,10 @@ const ProductDetailsCard = ({ productData }) => {
       </div>
 
       <div className="flex flex-col">
+        {/* product information */}
         <ProductInfo productData={productData} modifyClasses="mb-6" />
 
+        {/* color swatches and payment info */}
         <div className="mb-5">
           <ColorSwatches modifyClasses="mb-6" />
           <PaymentOptionLogos modifyClasses="mt-5" />

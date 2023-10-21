@@ -96,14 +96,19 @@ const AddProductForm = () => {
           <label className={labelClasses} htmlFor="brandName">
             Brand Name
           </label>
-          <input
-            className={inputClasses}
-            type="text"
-            id="brandName"
+          <select
             name="brandName"
-            placeholder="Brand Name"
+            id="brandName"
+            className={inputClasses}
             required
-          />
+          >
+            <option value="nike">Nike</option>
+            <option value="zara">Zara</option>
+            <option value="levis">Levi&apos;s</option>
+            <option value="hnm">H&M</option>
+            <option value="adidas">Adidas</option>
+            <option value="puma">Puma</option>
+          </select>
         </div>
 
         {/* type field */}
@@ -111,7 +116,7 @@ const AddProductForm = () => {
           <label className={labelClasses} htmlFor="type">
             Type
           </label>
-          <select name="type" id="type" className={inputClasses}>
+          <select name="type" id="type" className={inputClasses} required>
             <option value="Jeans">Jeans</option>
             <option value="Bag">Bag</option>
             <option value="Shirt">Shirt</option>
