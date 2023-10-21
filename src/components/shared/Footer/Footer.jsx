@@ -23,7 +23,7 @@ const Footer = ({
 }) => {
   return (
     <footer className="bg-primary pt-[7rem] pb-14 mt-auto relative">
-      <GoToTopBtn modifyClasses="absolute top-0 border-4 border-white -translate-y-1/2 left-1/2 -translate-x-1/2 z-20" />
+      <GoToTopBtn modifyClasses="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 z-20" />
       <InnerContainer>
         <Brandlogo logo={logo} modifyClasses="mb-6" />
 

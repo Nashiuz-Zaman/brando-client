@@ -12,14 +12,14 @@ const ThreeGridShowcase = ({ images }) => {
   const { theme } = useThemeProvider();
 
   return (
-    <div className="grid md:grid-cols-3 gap-5">
+    <div className="grid md:grid-cols-3 gap-10 md:gap-5">
       {images.map((image) => {
         return (
           <div className="group" key={image.id}>
             <DualThemeIcon
               imageSource={image.logo}
               theme={theme}
-              modifyClasses="w-max mx-auto mb-elementGapSm"
+              modifyClasses="w-max mx-auto mb-4 md:mb-elementGapSm"
             />
             <div className="aspect-square overflow-hidden">
               <img
@@ -31,7 +31,9 @@ const ThreeGridShowcase = ({ images }) => {
             <LinkBtn
               text={image.text}
               outlined={true}
-              modifyClasses="w-max mx-auto !text-textPrimary !border-textPrimary mt-elementGapMd"
+              modifyClasses={`w-max mx-auto !text-textPrimary !border-textPrimary mt-elementGapSm md:mt-elementGapMd ${
+                theme === "dark" ? "!text-white !border-white" : ""
+              }`}
             />
           </div>
         );

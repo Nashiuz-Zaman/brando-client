@@ -4,10 +4,19 @@ import PropTypes from "prop-types";
 // react icon
 import { IoChevronUp } from "react-icons/io5";
 
+// hook
+import useThemeProvider from "../../../hooks/useThemeProvider";
+
 export default function GoToTopBtn({ modifyClasses = "" }) {
+  const { theme } = useThemeProvider();
+
   // jsx template
   return (
-    <div className={`w-max rounded-full overflow-hidden ${modifyClasses}`}>
+    <div
+      className={`w-max rounded-full border-4 border-white ${
+        theme === "dark" ? "!border-textPrimary" : ""
+      } overflow-hidden ${modifyClasses}`}
+    >
       <button
         className="p-3 bg-primary"
         onClick={(e) => {

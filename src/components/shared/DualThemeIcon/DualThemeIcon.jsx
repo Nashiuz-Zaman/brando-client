@@ -5,7 +5,7 @@ const DualThemeIcon = ({ imageSource, theme, modifyClasses = "" }) => {
     <div
       style={{
         filter:
-          theme === "darl"
+          theme === "dark"
             ? "invert(100%) sepia(1%) saturate(7497%) hue-rotate(259deg) brightness(100%) contrast(103%)"
             : "none",
       }}
