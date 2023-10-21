@@ -98,7 +98,7 @@ const useRegistrationForm = () => {
                   });
                   navigate("/login");
                   clearTimeout(timer);
-                }, 2600);
+                }, 2100);
               });
             })
             // handle error
