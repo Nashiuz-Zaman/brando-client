@@ -15,8 +15,11 @@ import { useParams, useLoaderData } from "react-router-dom";
 import { vercelAddress } from "../../../data/vercelServerData";
 
 const BrandDetails = () => {
+  // getting data for the advertisments
   const brandData = useLoaderData();
+  // setting state for the products data
   const [productsData, setProductsData] = useState([]);
+  // get the brand from route params
   const { id } = useParams();
 
   // getting data for the products specific to brands
@@ -47,6 +50,7 @@ const BrandDetails = () => {
             text={`All Products (${productsData ? productsData.length : 0})`}
             modifyClasses="mb-elementGapMd"
           />
+          {/* if there are no products then show this message */}
           {productsData.length === 0 && (
             <div className="bg-lightGray rounded-default w-max mx-auto p-6 space-y-6">
               <p className="text-3xl mx-auto text-center">
@@ -59,6 +63,8 @@ const BrandDetails = () => {
               />
             </div>
           )}
+
+          {/* if there are products then show this component */}
           {productsData.length > 0 && <ProductCards products={productsData} />}
         </InnerContainer>
       </section>
