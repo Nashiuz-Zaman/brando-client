@@ -1,7 +1,13 @@
+// react
 import PropTypes from "prop-types";
+
+// shared components
+import RatingStars from "../RatingStars/RatingStars";
 
 const ProductInfo = ({ productData = {}, modifyClasses = "" }) => {
   const { brandName, type, price, rating } = productData;
+
+  const ratingGiven = Math.round(parseFloat(rating));
 
   return (
     <div className={`space-y-1 lg:text-lg ${modifyClasses}`}>
@@ -19,10 +25,8 @@ const ProductInfo = ({ productData = {}, modifyClasses = "" }) => {
       <p>
         <span className="text-primary font-bold">Price:</span> ${price}
       </p>
-      <p>
-        <span className="text-primary font-bold">Rating:</span> {rating} out of
-        5
-      </p>
+
+      <RatingStars ratingGiven={ratingGiven} />
     </div>
   );
 };

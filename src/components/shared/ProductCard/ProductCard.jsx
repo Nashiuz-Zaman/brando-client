@@ -1,9 +1,13 @@
+// react
 import PropTypes from "prop-types";
+
+// shared components
 import LinkBtn from "../LinkBtn/LinkBtn";
+import RatingStars from "../RatingStars/RatingStars";
 
 const ProductCard = ({ product }) => {
   const { _id, imageSource, name, brandName, type, price, rating } = product;
-
+  const ratingGiven = Math.round(parseFloat(rating));
   return (
     <div className="bg-lightGray rounded-default p-6 shadow-lg">
       <div className="aspect-square mb-5">
@@ -21,7 +25,7 @@ const ProductCard = ({ product }) => {
         </p>
         <p>Type: {type}</p>
         <p>Price: ${price}</p>
-        <p>Rating: {rating}</p>
+        <RatingStars ratingGiven={ratingGiven} />
       </div>
 
       <div className="space-y-4">
