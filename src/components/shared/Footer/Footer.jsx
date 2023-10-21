@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 // shared component imports
 import Brandlogo from "../Brandlogo/Brandlogo";
 import Address from "../Address/Address";
+import GoToTopBtn from "../GoToTopBtn/GoToTopBtn";
 
 // container components
 import InnerContainer from "../../container/InnerContainer/InnerContainer";
@@ -21,9 +22,10 @@ const Footer = ({
   socialMediaOptions = [],
 }) => {
   return (
-    <footer className="bg-primary py-14 mt-auto">
+    <footer className="bg-primary pt-[7rem] pb-14 mt-auto relative">
+      <GoToTopBtn modifyClasses="absolute top-0 border-4 border-white -translate-y-1/2 left-1/2 -translate-x-1/2 z-20" />
       <InnerContainer>
-        <Brandlogo logo={logo} modifyClasses="mb-12" />
+        <Brandlogo logo={logo} modifyClasses="mb-6" />
 
         <Address addressData={addressData} modifyClasses="mb-12 text-center" />
 
