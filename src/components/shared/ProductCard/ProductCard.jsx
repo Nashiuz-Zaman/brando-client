@@ -18,7 +18,7 @@ const ProductCard = ({ product }) => {
         />
       </div>
 
-      <div className="space-y-1 mb-5">
+      <div className="space-y-2 mb-5">
         <h4 className="text-primary font-bold text-xl">{name}</h4>
         <p className="capitalize">
           Brand: {brandName === "hnm" ? "H&M" : brandName}
