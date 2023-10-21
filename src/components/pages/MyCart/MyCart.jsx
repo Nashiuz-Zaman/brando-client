@@ -79,12 +79,13 @@ const MyCart = () => {
                         {item.productData.name}
                       </p>
                       <p className="capitalize justify-self-center text-sm md:text-xl">
-                        {item.productData.brandName}
+                        {item.productData.brandName === "hnm"
+                          ? "H&M"
+                          : item.productData.brandName}
                       </p>
                       <div className="justify-self-end">
                         <ButtonBtn
                           onClickFunction={() => {
-                            console.log(item._id);
                             handleDelete(item._id);
                           }}
                           text="Remove"

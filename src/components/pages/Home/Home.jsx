@@ -143,7 +143,7 @@ const Home = () => {
       {/* today's story section */}
       <section className="mb-sectionGapMd md:mb-sectionGapLg">
         <OuterContainer>
-          <div className="w-full h-full relative pt-elementGapMd">
+          <div className="w-full h-full relative py-elementGapMd">
             {/* two clip paths are working here for different screen sizes */}
             <ClipDesign modifyClasses="hidden clip2 md:block" />
             <ClipDesign modifyClasses="block clip3 md:hidden" />
