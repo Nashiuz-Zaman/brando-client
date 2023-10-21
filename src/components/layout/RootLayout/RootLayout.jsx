@@ -24,7 +24,7 @@ function RootLayout() {
   useScrollToTop();
   return (
     <div
-      className={`flex flex-col min-h-screen font-raleway text-textPrimary font-medium ${
+      className={`flex flex-col min-h-screen font-raleway text-textPrimary font-medium transitioan-all duration-300 ${
         theme === "light" ? "bg-white" : "bg-textPrimary"
       }`}
     >
