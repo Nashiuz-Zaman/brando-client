@@ -15,9 +15,13 @@ import brandlogo from "./../../../assets/logo/brandlogo.webp";
 import brandlogoDark from "./../../../assets/logo/brandlogo-dark.webp";
 import { addressData } from "../../../data/addressData";
 
+//hook
+
+import useScrollToTop from "./../../../hooks/useScrollToTop";
+
 function RootLayout() {
   const { theme } = useThemeProvider();
-
+  useScrollToTop();
   return (
     <div
       className={`flex flex-col min-h-screen font-raleway text-textPrimary font-medium ${
