@@ -24,10 +24,7 @@ const Footer = ({
     <footer className="bg-primary py-14 mt-auto">
       <InnerContainer>
         <Brandlogo logo={logo} modifyClasses="mb-12" />
-        {/* footer nav heading */}
-        <h3 className="text-white text-center mb-3 font-bold text-2xl">
-          Headquarters
-        </h3>
+
         <Address addressData={addressData} modifyClasses="mb-12 text-center" />
 
         {/* footer nav heading */}
