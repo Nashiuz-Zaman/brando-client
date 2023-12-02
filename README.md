@@ -9,6 +9,3 @@
 - Registration password needs to be atleast 6 characters in length and must contain a special character and capital letter
 - Once logged in users can also update a certan product details using the update button on the product card which will redirect them to the update product form
 
-# Live site link
-
-https://brando-f1bde.web.app/
