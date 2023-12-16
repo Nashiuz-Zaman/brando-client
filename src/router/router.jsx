@@ -34,14 +34,14 @@ const router = createBrowserRouter([
           return fetch("/brands.json");
         },
       },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/register",
-        element: <Register />,
-      },
+      // {
+      //   path: "/login",
+      //   element: <Login />,
+      // },
+      // {
+      //   path: "/register",
+      //   element: <Register />,
+      // },
       {
         path: "/brands/:id",
         element: <BrandDetails />,
