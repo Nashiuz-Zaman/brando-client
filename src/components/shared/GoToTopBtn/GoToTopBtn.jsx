@@ -8,10 +8,9 @@ export default function GoToTopBtn({ modifyClasses = "" }) {
   // jsx template
   return (
     <div
-      className={`w-max rounded-full border-4 border-white overflow-hidden ${modifyClasses}`}
+      className={`w-max rounded-full border-4 border-white p-3 aspect-square bg-black overflow-hidden ${modifyClasses}`}
     >
       <button
-        className="p-3 bg-primary"
         onClick={(e) => {
           e.preventDefault();
           window.scrollTo(0, 0);

@@ -25,7 +25,11 @@ const Footer = ({
     <footer className="bg-black pt-[7rem] pb-14 mt-auto relative">
       <GoToTopBtn modifyClasses="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 z-20" />
       <InnerContainer>
-        <Brandlogo logo={logo} modifyClasses="mb-6" />
+        <Brandlogo
+          logo={logo}
+          modifyClasses="mb-6 mx-auto"
+          imageModifyClasses="h-[3.5rem]"
+        />
 
         <Address addressData={addressData} modifyClasses="mb-12 text-center" />
 
