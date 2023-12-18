@@ -11,8 +11,8 @@ import useThemeProvider from "./../../../hooks/useThemeProvider";
 // data
 import { navigationOptions } from "../../../data/navigationOptions";
 import { socialmediaOptions } from "../../../data/socialMediaData";
-import brandlogo from "./../../../assets/logo/brandlogo.webp";
-import brandlogoDark from "./../../../assets/logo/brandlogo-dark.webp";
+import logoPrimary from "./../../../assets/logo/logo-primary.webp";
+import logoWhite from "./../../../assets/logo/logo-white.webp";
 import { addressData } from "../../../data/addressData";
 
 //hook
@@ -24,17 +24,17 @@ function RootLayout() {
   useScrollToTop();
   return (
     <div
-      className={`flex flex-col min-h-screen font-raleway text-textPrimary font-medium transitioan-all duration-300 ${
+      className={`flex flex-col min-h-screen max-w-[120rem] mx-auto overflow-x-hidden font-default text-textPrimary font-medium transition-all duration-300 ${
         theme === "light" ? "bg-white" : "bg-textPrimary"
       }`}
     >
       <Header
-        logo={theme === "light" ? brandlogo : brandlogoDark}
+        logo={theme === "light" ? logoPrimary : logoWhite}
         navigationOptions={navigationOptions}
       />
       <Outlet />
       <Footer
-        logo={brandlogoDark}
+        logo={logoWhite}
         addressData={addressData}
         navigationOptions={navigationOptions}
         socialMediaOptions={socialmediaOptions}
