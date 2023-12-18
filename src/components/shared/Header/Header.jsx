@@ -12,14 +12,13 @@ import ButtonBtn from "../ButtonBtn/ButtonBtn";
 
 // container components
 import InnerContainer from "./../../container/InnerContainer/InnerContainer";
-import OuterContainer from "./../../container/OuterContainer.jsx/OuterContainer";
 
 // hook
 import useMobileNavigation from "../../../hooks/useMobileNavigation";
 import useAuthContext from "../../../hooks/useAuthContext";
 
 // data
-import brandLogoImageDark from "./../../../assets/logo/brandlogo-dark.webp";
+import logoWhite from "./../../../assets/logo/logo-white.webp";
 
 // Extract the value of theme provider in header component so that we can conditionally pass our logo images in the brand logo component
 const Header = ({ logo = "", navigationOptions = [] }) => {
@@ -32,10 +31,16 @@ const Header = ({ logo = "", navigationOptions = [] }) => {
   return (
     <header>
       {/* conditionally pass the logo image variants */}
-      <Brandlogo logo={logo} modifyClasses="py-elementGapMd" />
+      <InnerContainer>
+        <Brandlogo
+          logo={logo}
+          modifyClasses="py-elementGapMd mr-auto"
+          imageModifyClasses="h-[4rem]"
+        />
+      </InnerContainer>
 
-      <div className="bg-gradient-to-r from-primary to-primaryLight">
-        <OuterContainer>
+      <div className="bg-black">
+        <>
           <InnerContainer>
             <div className="block lg:grid lg:grid-cols-2 items-center  py-elementGapSm">
               {/* extra empty div for layout purposes - equally divide 3 cols and position them nicely */}
@@ -76,14 +81,14 @@ const Header = ({ logo = "", navigationOptions = [] }) => {
 
           {/* moble navigation menu - THE MENU WILL OPEN AND CLOSE according to the state extracted from the custom hook */}
           <MobileNav
-            brandLogoImage={brandLogoImageDark}
+            brandLogoImage={logoWhite}
             navigationOptions={navigationOptions}
             openState={mobileNavOpen}
             closeNavFunction={closeNav}
             user={user}
             logOutFunction={signOutUser}
           />
-        </OuterContainer>
+        </>
       </div>
     </header>
   );
