@@ -6,6 +6,8 @@ export default {
       screens: {
         "2xsm": "360px",
         xsm: "480px",
+        "2md": "850px",
+        "3xl": "1700px",
       },
       spacing: {
         sectionGapLg: "11rem",
@@ -16,15 +18,19 @@ export default {
       },
 
       colors: {
-        primary: "#E2142D",
+        primary: "#E3142D",
         primaryLight: "#e52c42",
         textPrimary: "#1C1B1B",
         textMediumLight: "#1c1b1bcc",
         textLight: "#1c1b1b99",
         lightGray: "#eee",
       },
+      boxShadow: {
+        large: "0 10px 60px -5px rgba(0,0,0,0.3)",
+        medium: "0 5px 40px -5px rgba(0,0,0,0.25)",
+      },
       fontFamily: {
-        raleway: "'Raleway', sans-serif",
+        default: "'Raleway', sans-serif",
       },
       borderRadius: {
         default: "8px",
