@@ -15,14 +15,13 @@ import ThreeGridShowcase from "../../shared/ThreeGridShowcase/ThreeGridShowcase"
 
 // container components
 import InnerContainer from "../../container/InnerContainer/InnerContainer";
-import OuterContainer from "./../../container/OuterContainer.jsx/OuterContainer";
+import OuterContainer from "./../../container/OuterContainer/OuterContainer";
 import CenterContainer from "./../../container/CenterContainer/CenterContainer";
 
 // hooks
 import useThemeProvider from "../../../hooks/useThemeProvider";
 
 // data
-import { carouselImages } from "../../../data/carouselData";
 import { logos, logosBlack } from "./../../../data/featuredInData";
 import { saleImages } from "../../../data/saleData";
 import { sportsAdsData } from "../../../data/sportsAdsData";
@@ -35,26 +34,6 @@ const Home = () => {
 
   // retreive data from loader
   const brands = useLoaderData();
-
-  // make the text object which contains text for the banner component
-  const bannerTextObj = {
-    heading: (
-      <>
-        <span className="text-primary">Brando:</span> Elevate Your{" "}
-        <br className="hidden xsm:inline-block" />
-        Style with Iconic Brands
-      </>
-    ),
-
-    description: (
-      <>
-        Discover the latest trends in footwear and fashion from renowned brands
-        <br className="hidden xsm:inline-block" /> like Nike, H&M, Levi&apos;s,
-        Zara, and more.
-      </>
-    ),
-    btnText: "Shop Now",
-  };
 
   // featured in section text information
   const featuredInHeading = "Featured In";
@@ -84,11 +63,7 @@ const Home = () => {
       {/* banner section */}
       <section className="mt-[1.5rem] lg:mt-[5rem] mb-sectionGapMd md:mb-sectionGapLg">
         <InnerContainer>
-          <Banner
-            textObj={bannerTextObj}
-            carouselData={carouselImages}
-            theme={theme}
-          />
+          <Banner theme={theme} />
         </InnerContainer>
       </section>
 
