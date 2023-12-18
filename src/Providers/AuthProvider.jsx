@@ -27,6 +27,10 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
   // set up user state
   const [user, setUser] = useState(null);
+
+  //  user/members/admin  profile information
+  const [profileData, setProfileData] = useState(null);
+
   // declare app state
   const [appLoading, setAppLoading] = useState(true);
 
@@ -66,6 +70,7 @@ const AuthProvider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (curUser) => {
       if (curUser) {
         setUser(curUser);
+        setProfileData(curUser);
         setAppLoading(false);
       } else {
         setUser(null);
