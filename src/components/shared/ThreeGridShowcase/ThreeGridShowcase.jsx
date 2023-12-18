@@ -31,10 +31,7 @@ const ThreeGridShowcase = ({ images }) => {
             <LinkBtn
               text={image.text}
               url={image.url}
-              outlined={true}
-              modifyClasses={`w-max mx-auto !text-textPrimary !border-textPrimary mt-elementGapSm md:mt-elementGapMd ${
-                theme === "dark" ? "!text-white !border-white" : ""
-              }`}
+              modifyClasses={`w-max mx-auto mt-elementGapSm md:mt-elementGapMd`}
             />
           </div>
         );
