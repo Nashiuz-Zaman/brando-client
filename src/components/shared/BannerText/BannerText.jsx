@@ -22,18 +22,14 @@ const BannerText = ({ textObj = {}, theme = "light" }) => {
       {/* buttons in the banner text */}
       <div className="flex flex-col xsm:flex-row items-center justify-center lg:justify-start gap-4">
         {/* first button */}
-        <LinkBtn text={btnText} hashed={true} url="#explore" />
+        <LinkBtn theme={theme} text={btnText} hashed={true} url="#explore" />
 
         {/* register button */}
         <LinkBtn
-          outlined={true}
+          colorTheme="outlinedPrimary"
           text="Sign up - It's free!"
           url="/register"
-          modifyClasses={`font-medium ${
-            theme === "dark"
-              ? "!text-white !border-white"
-              : "!border-primary !text-primary"
-          }`}
+          theme={theme}
         />
       </div>
     </div>

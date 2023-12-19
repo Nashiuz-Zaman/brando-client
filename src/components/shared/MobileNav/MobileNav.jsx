@@ -61,7 +61,7 @@ const MobileNav = ({
 
           <div onClick={closeNavFunction}>
             <LinkBtn
-              outlined={true}
+              colorTheme="outlined"
               url="/register"
               text="Register Account"
               modifyClasses="md:w-max md:mx-auto"

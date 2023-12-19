@@ -14,6 +14,9 @@ import { useParams, useLoaderData } from "react-router-dom";
 // data
 import { vercelAddress } from "../../../data/vercelServerData";
 
+// theme
+import useThemeProvider from "./../../../hooks/useThemeProvider";
+
 const BrandDetails = () => {
   // getting data for the advertisments
   const brandData = useLoaderData();
@@ -21,6 +24,8 @@ const BrandDetails = () => {
   const [productsData, setProductsData] = useState([]);
   // get the brand from route params
   const { id } = useParams();
+  // theme
+  const { theme } = useThemeProvider();
 
   // getting data for the products specific to brands
   useEffect(() => {
@@ -38,7 +43,7 @@ const BrandDetails = () => {
         <InnerContainer>
           <div>
             {/* <ClipDesign /> */}
-            <BrandBanner brand={brandData} />
+            <BrandBanner brand={brandData} theme={theme} />
           </div>
         </InnerContainer>
       </section>
@@ -60,12 +65,15 @@ const BrandDetails = () => {
                 text={"Back to Home"}
                 modifyClasses="w-max mx-auto"
                 url={"/"}
+                theme={theme}
               />
             </div>
           )}
 
           {/* if there are products then show this component */}
-          {productsData.length > 0 && <ProductCards products={productsData} />}
+          {productsData.length > 0 && (
+            <ProductCards theme={theme} products={productsData} />
+          )}
         </InnerContainer>
       </section>
     </div>

@@ -3,12 +3,14 @@ import PropTypes from "prop-types";
 import Carousel from "./../Carousel/Carousel";
 import LinkBtn from "../LinkBtn/LinkBtn";
 
-const BrandBanner = ({ brand = {}, modifyClasses = "" }) => {
+const BrandBanner = ({ brand = {}, modifyClasses = "", theme = "light" }) => {
   const { brandName, logo, brandAds } = brand;
 
   return (
     <div
-      className={`grid grid-cols-1 bg-lightGray md:grid-cols-2 p-[1.5rem] lg:p-[5rem] gap-[2rem] items-center ${modifyClasses}`}
+      className={`grid grid-cols-1 bg-lightGray ${
+        theme === "dark" ? "bg-lightGrayDarkTheme" : "bg-lightGray"
+      } md:grid-cols-2 p-[1.5rem] lg:p-[5rem] gap-[2rem] items-center ${modifyClasses}`}
     >
       {/* brand related text */}
       <div className="order-2 md:order-1">
@@ -31,6 +33,7 @@ const BrandBanner = ({ brand = {}, modifyClasses = "" }) => {
           text="See Collection"
           modifyClasses="w-max mx-auto"
           hashed={true}
+          theme={theme}
           url={`/brands/${brandName}/#explore`}
         />
       </div>
@@ -46,6 +49,7 @@ const BrandBanner = ({ brand = {}, modifyClasses = "" }) => {
 BrandBanner.propTypes = {
   brand: PropTypes.object,
   modifyClasses: PropTypes.string,
+  theme: PropTypes.string,
 };
 
 export default BrandBanner;

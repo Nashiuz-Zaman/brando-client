@@ -5,11 +5,15 @@ import PropTypes from "prop-types";
 import LinkBtn from "../LinkBtn/LinkBtn";
 import RatingStars from "../RatingStars/RatingStars";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, modifyClasses = "", theme = "light" }) => {
   const { _id, imageSource, name, brandName, type, price, rating } = product;
   const ratingGiven = Math.round(parseFloat(rating));
   return (
-    <div className="bg-lightGray rounded-default p-6 shadow-lg">
+    <div
+      className={`${
+        theme === "dark" ? "bg-lightGrayDarkTheme" : "bg-lightGray"
+      } rounded-default p-6 shadow-lg ${modifyClasses}`}
+    >
       <div className="aspect-square mb-5">
         <img
           className="w-full h-full object-cover"
@@ -19,7 +23,7 @@ const ProductCard = ({ product }) => {
       </div>
 
       <div className="space-y-2 mb-5">
-        <h4 className="text-primary font-bold text-xl">{name}</h4>
+        <h4 className="font-bold text-xl">{name}</h4>
         <p className="capitalize">
           Brand: {brandName === "hnm" ? "H&M" : brandName}
         </p>
@@ -31,13 +35,14 @@ const ProductCard = ({ product }) => {
       <div className="space-y-4">
         <LinkBtn
           text="Details"
-          modifyClasses="text-center"
+          modifyClasses="!w-full"
+          theme={theme}
           url={`/brands/${brandName}/products/details/${_id}`}
         />
         <LinkBtn
           text="Update"
-          outlined={true}
-          modifyClasses="text-center !border-primary !text-primary"
+          colorTheme="outlinedPrimary"
+          modifyClasses="!w-full"
           url={`/brands/${brandName}/products/update/${_id}`}
         />
       </div>
@@ -46,7 +51,9 @@ const ProductCard = ({ product }) => {
 };
 
 ProductCard.propTypes = {
-  product: PropTypes.object.isRequired,
+  product: PropTypes.object,
+  modifyClasses: PropTypes.string,
+  theme: PropTypes.string,
 };
 
 export default ProductCard;
