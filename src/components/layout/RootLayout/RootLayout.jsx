@@ -16,12 +16,12 @@ import logoWhite from "./../../../assets/logo/logo-white.webp";
 import { addressData } from "../../../data/addressData";
 
 //hook
-
 import useScrollToTop from "./../../../hooks/useScrollToTop";
 
 function RootLayout() {
   const { theme } = useThemeProvider();
   useScrollToTop();
+
   return (
     <div
       className={`flex flex-col min-h-screen max-w-[120rem] mx-auto overflow-x-hidden font-default text-textPrimary font-medium transition-all duration-300 ${
@@ -29,7 +29,7 @@ function RootLayout() {
       }`}
     >
       <Header
-        logo={theme === "light" ? logoPrimary : logoWhite}
+        logo={theme === "dark" ? logoWhite : logoPrimary}
         navigationOptions={navigationOptions}
       />
       <Outlet />
