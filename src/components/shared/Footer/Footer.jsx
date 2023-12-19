@@ -22,7 +22,7 @@ const Footer = ({
   socialMediaOptions = [],
 }) => {
   return (
-    <footer className="bg-black pt-[7rem] pb-14 mt-auto relative">
+    <footer className="bg-blackLight pt-[7rem] pb-14 mt-auto relative">
       <GoToTopBtn modifyClasses="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 z-20" />
       <InnerContainer>
         <Brandlogo
