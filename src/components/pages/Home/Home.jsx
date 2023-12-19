@@ -100,7 +100,7 @@ const Home = () => {
           <div className="w-full relative pb-[6rem]">
             <ClipDesign modifyClasses="clip1" />
             <InnerContainer>
-              <Brands brands={brands} />
+              <Brands brands={brands} theme={theme} />
             </InnerContainer>
           </div>
         </OuterContainer>
