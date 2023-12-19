@@ -123,7 +123,11 @@ const RegistrationForm = () => {
           </div>
         )}
 
-        <ButtonBtn text="Register" modifyClasses="w-full block mt-10 mb-4" />
+        <ButtonBtn
+          theme={theme}
+          text="Register"
+          modifyClasses="!w-full mt-10 mb-4"
+        />
         <p className="text-sm text-center">
           Already have an account?{" "}
           <Link className="text-primary font-semibold" to={"/login"}>

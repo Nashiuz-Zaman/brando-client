@@ -79,7 +79,11 @@ const LoginForm = () => {
           <p className="mt-4 text-red-600 text-center">{loginError}</p>
         )}
 
-        <ButtonBtn text="Log In" modifyClasses="w-full block mt-10 mb-4" />
+        <ButtonBtn
+          theme={theme}
+          text="Log In"
+          modifyClasses="!w-full mt-10 mb-4"
+        />
         <p className="text-sm text-center">
           Don&apos;t have an account?{" "}
           <Link className="text-primary font-semibold" to={"/register"}>

@@ -15,7 +15,11 @@ import useAuthContext from "./../../../hooks/useAuthContext";
 // data
 import { vercelAddress } from "./../../../data/vercelServerData";
 
-const ProductDetailsCard = ({ productData }) => {
+const ProductDetailsCard = ({
+  productData,
+  modifyClasses = "",
+  theme = "light",
+}) => {
   // extract product info
   const { imageSource, name } = productData;
   // declare the state for the toast
@@ -54,7 +58,11 @@ const ProductDetailsCard = ({ productData }) => {
   };
 
   return (
-    <div className="bg-lightGray rounded-default p-6 shadow-lg grid md:grid-cols-2 md:gap-8">
+    <div
+      className={`${
+        theme === "dark" ? "bg-lightGrayDarkTheme" : "bg-lightGray"
+      } rounded-default p-6 shadow-lg grid md:grid-cols-2 md:gap-8 ${modifyClasses}`}
+    >
       {/* toast */}
       <CartSuccessToast show={showCartSuccessToast} />
 
@@ -78,9 +86,10 @@ const ProductDetailsCard = ({ productData }) => {
 
         <div className="space-y-4 mt-auto">
           <ButtonBtn
+            theme={theme}
             onClickFunction={handleAddToCart}
             text="Add To Cart"
-            modifyClasses="text-center block w-full"
+            modifyClasses="block !w-full"
           />
         </div>
       </div>
@@ -90,6 +99,8 @@ const ProductDetailsCard = ({ productData }) => {
 
 ProductDetailsCard.propTypes = {
   productData: PropTypes.object,
+  modifyClasses: PropTypes.string,
+  theme: PropTypes.string,
 };
 
 export default ProductDetailsCard;

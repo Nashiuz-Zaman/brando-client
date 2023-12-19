@@ -168,7 +168,11 @@ const AddProductForm = () => {
           />
         </div>
 
-        <ButtonBtn text="Add Product" modifyClasses="w-full block mt-10 mb-4" />
+        <ButtonBtn
+          theme={theme}
+          text="Add Product"
+          modifyClasses="!w-full mt-10 mb-4"
+        />
       </form>
     </div>
   );

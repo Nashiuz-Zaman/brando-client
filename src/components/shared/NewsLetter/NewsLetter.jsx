@@ -1,7 +1,12 @@
 // shared components
 import ButtonBtn from "../ButtonBtn/ButtonBtn";
 
+// hook
+import useThemeProvider from "../../../hooks/useThemeProvider";
+
 const NewsLetter = () => {
+  const { theme } = useThemeProvider();
+
   const handleClick = (e) => {
     e.preventDefault();
   };
@@ -11,13 +16,14 @@ const NewsLetter = () => {
       <form onSubmit={handleClick} className="w-max mx-auto md:flex">
         <input
           type="text"
-          className="border border-textLight md:border-r-0 rounded-default md:rounded-r-none w-[15rem] md:w-[20rem]  block px-3 py-3 mb-[1.5rem] md:mb-0"
+          className="border border-textLight md:border-r-0 rounded-full md:rounded-r-none w-[15rem] md:w-[20rem] block px-3 py-3 mb-[1.5rem] md:mb-0"
           placeholder="Email"
           required
         />
         <ButtonBtn
+          theme={theme}
           text="Sign up!"
-          modifyClasses="w-max mx-auto md:rounded-l-none border border-primary"
+          modifyClasses="w-max mx-auto md:rounded-l-none border "
         />
       </form>
     </div>

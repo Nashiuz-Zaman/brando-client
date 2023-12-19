@@ -64,10 +64,10 @@ const Header = ({ logo = "", navigationOptions = [] }) => {
                   <>
                     <UsernameWithImage user={user} />
                     <ButtonBtn
-                      outlined={true}
+                      colorTheme="outlined"
                       text="Log Out"
                       onClickFunction={signOutUser}
-                      modifyClasses="rounded-default !px-2 xl:!px-4 hidden lg:block hover:bg-white hover:text-primary"
+                      modifyClasses="rounded-default !px-2 xl:!px-4 hidden lg:block"
                     />
                   </>
                 )}

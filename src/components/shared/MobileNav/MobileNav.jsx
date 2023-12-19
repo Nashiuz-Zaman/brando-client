@@ -79,7 +79,7 @@ const MobileNav = ({
 
           <div onClick={closeNavFunction}>
             <ButtonBtn
-              outlined={true}
+              colorTheme="outlined"
               onClickFunction={logOutFunction}
               text="Log Out"
               modifyClasses="mx-auto"

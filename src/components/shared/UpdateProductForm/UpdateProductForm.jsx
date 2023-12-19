@@ -168,7 +168,11 @@ const UpdateProductForm = ({ initialProduct }) => {
           />
         </div>
 
-        <ButtonBtn text="Submit" modifyClasses="w-full block mt-10 mb-4" />
+        <ButtonBtn
+          theme={theme}
+          text="Submit"
+          modifyClasses="!w-full mt-10 mb-4"
+        />
       </form>
     </div>
   );
