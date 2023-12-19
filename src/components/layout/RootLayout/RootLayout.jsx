@@ -25,7 +25,7 @@ function RootLayout() {
   return (
     <div
       className={`flex flex-col min-h-screen max-w-[120rem] mx-auto overflow-x-hidden font-default text-textPrimary font-medium transition-all duration-300 ${
-        theme === "light" ? "bg-white" : "bg-textPrimary"
+        theme === "light" ? "bg-white" : "bg-mainDarkTheme"
       }`}
     >
       <Header

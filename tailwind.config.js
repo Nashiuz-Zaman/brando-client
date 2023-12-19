@@ -28,6 +28,7 @@ export default {
         lightGray: "#f5f5f5",
         lightGrayDarkTheme: "#dddddd",
         blackLight: "#111111",
+        mainDarkTheme: "#1E1E1E",
       },
       boxShadow: {
         large: "0 10px 60px -5px rgba(0,0,0,0.3)",
