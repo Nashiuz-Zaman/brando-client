@@ -8,7 +8,7 @@ export default function GoToTopBtn({ modifyClasses = "" }) {
   // jsx template
   return (
     <div
-      className={`w-max rounded-full border-4 border-white p-3 aspect-square bg-black overflow-hidden ${modifyClasses}`}
+      className={`w-max rounded-full border-4 border-white p-3 aspect-square bg-blackLight overflow-hidden ${modifyClasses}`}
     >
       <button
         onClick={(e) => {
