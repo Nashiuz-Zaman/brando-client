@@ -65,7 +65,7 @@ const Carousel1 = ({ imagesData, background = true, modifyClasses = "" }) => {
                 backfaceVisibility: "hidden",
                 MozBackfaceVisibility: "hidden",
                 WebkitBackfaceVisibility: "hidden",
-                top: "12rem",
+
                 transform: `translateY(-50%) translateX(${
                   id === curSlide
                     ? "50%"
@@ -84,7 +84,7 @@ const Carousel1 = ({ imagesData, background = true, modifyClasses = "" }) => {
                     : "0"
                 })`,
               }}
-              className={`absolute shadow-large ease-out ${
+              className={`absolute shadow-large ease-out top-1/2 md:top-[42%] ${
                 id === curSlide || id === nextSlide || id === prevSlide
                   ? "transition-all duration-500 opacity-100 visible z-30"
                   : "transition-all duration-500 opacity-0 collapse z-10"
@@ -104,7 +104,7 @@ const Carousel1 = ({ imagesData, background = true, modifyClasses = "" }) => {
         })}
 
       {/* buttons */}
-      <div className="absolute w-[70%] top-[23rem] left-1/2 -translate-x-1/2 flex space-x-5 items-center">
+      <div className="absolute w-[70%] top-[83%] -translate-y-1/2 left-1/2 -translate-x-1/2 hidden md:flex space-x-5 items-center">
         {/* left button */}
         <button
           onClick={goPrevSlide}
