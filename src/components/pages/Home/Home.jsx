@@ -19,7 +19,7 @@ import OuterContainer from "./../../container/OuterContainer/OuterContainer";
 import CenterContainer from "./../../container/CenterContainer/CenterContainer";
 
 // hooks
-import useThemeProvider from "../../../hooks/useThemeProvider";
+import useTheme from "../../../hooks/useTheme";
 
 // data
 import { logos, logosBlack } from "./../../../data/featuredInData";
@@ -30,7 +30,7 @@ import nikeVideo from "./../../../assets/video/nikead.mp4";
 // home jsx component starts here
 const Home = () => {
   // extract the theme from the custom hook
-  const { theme } = useThemeProvider();
+  const { theme } = useTheme();
 
   // retreive data from loader
   const brands = useLoaderData();

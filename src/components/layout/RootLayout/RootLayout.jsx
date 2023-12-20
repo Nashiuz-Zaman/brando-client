@@ -5,9 +5,6 @@ import { Outlet } from "react-router-dom";
 import Header from "../../shared/Header/Header";
 import Footer from "../../shared/Footer/Footer";
 
-// hooks
-import useThemeProvider from "./../../../hooks/useThemeProvider";
-
 // data
 import { navigationOptions } from "../../../data/navigationOptions";
 import { socialmediaOptions } from "../../../data/socialMediaData";
@@ -17,10 +14,13 @@ import { addressData } from "../../../data/addressData";
 
 //hook
 import useScrollToTop from "./../../../hooks/useScrollToTop";
+import useTheme from "../../../hooks/useTheme";
 
 function RootLayout() {
-  const { theme } = useThemeProvider();
+  // hook for auto scroll to the top of the page
   useScrollToTop();
+
+  const { theme } = useTheme();
 
   return (
     <div

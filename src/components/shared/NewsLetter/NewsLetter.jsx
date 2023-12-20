@@ -2,10 +2,10 @@
 import ButtonBtn from "../ButtonBtn/ButtonBtn";
 
 // hook
-import useThemeProvider from "../../../hooks/useThemeProvider";
+import useTheme from "../../../hooks/useTheme";
 
 const NewsLetter = () => {
-  const { theme } = useThemeProvider();
+  const { theme } = useTheme();
 
   const handleClick = (e) => {
     e.preventDefault();

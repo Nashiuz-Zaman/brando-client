@@ -2,10 +2,10 @@
 import PropTypes from "prop-types";
 
 // theme
-import useThemeProvider from "../../../hooks/useThemeProvider";
+import useTheme from "../../../hooks/useTheme";
 
 const SectionHeading = ({ text, modifyClasses = "" }) => {
-  const { theme } = useThemeProvider();
+  const { theme } = useTheme();
 
   return (
     <h2

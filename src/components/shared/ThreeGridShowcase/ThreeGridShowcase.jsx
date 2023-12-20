@@ -6,10 +6,10 @@ import LinkBtn from "../LinkBtn/LinkBtn";
 import DualThemeIcon from "../DualThemeIcon/DualThemeIcon";
 
 // theme
-import useThemeProvider from "../../../hooks/useThemeProvider";
+import useTheme from "../../../hooks/useTheme";
 
 const ThreeGridShowcase = ({ images }) => {
-  const { theme } = useThemeProvider();
+  const { theme } = useTheme();
 
   return (
     <div className="grid md:grid-cols-3 gap-10 md:gap-5">

@@ -7,13 +7,13 @@ import { useNavigate } from "react-router-dom";
 import ButtonBtn from "../ButtonBtn/ButtonBtn";
 
 // custom hooks
-import useThemeProvider from "../../../hooks/useThemeProvider";
+import useTheme from "../../../hooks/useTheme";
 
 // data
 import { vercelAddress } from "../../../data/vercelServerData";
 
 const UpdateProductForm = ({ initialProduct }) => {
-  const { theme } = useThemeProvider();
+  const { theme } = useTheme();
   const navigate = useNavigate();
 
   // old values

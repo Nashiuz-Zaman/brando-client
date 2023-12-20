@@ -10,10 +10,10 @@ import GoogleLoginBtn from "./../GoogleLoginBtn/GoogleLoginBtn";
 
 // custom hooks
 import useLoginForm from "../../../hooks/useLoginForm";
-import useThemeProvider from "../../../hooks/useThemeProvider";
+import useTheme from "../../../hooks/useTheme";
 
 const LoginForm = () => {
-  const { theme } = useThemeProvider();
+  const { theme } = useTheme();
   const {
     loginInfo,
     setLoginInfo,

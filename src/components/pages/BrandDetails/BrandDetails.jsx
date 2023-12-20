@@ -15,7 +15,7 @@ import { useParams, useLoaderData } from "react-router-dom";
 import { vercelAddress } from "../../../data/vercelServerData";
 
 // theme
-import useThemeProvider from "./../../../hooks/useThemeProvider";
+import useTheme from "../../../hooks/useTheme";
 
 const BrandDetails = () => {
   // getting data for the advertisments
@@ -25,7 +25,7 @@ const BrandDetails = () => {
   // get the brand from route params
   const { id } = useParams();
   // theme
-  const { theme } = useThemeProvider();
+  const { theme } = useTheme();
 
   // getting data for the products specific to brands
   useEffect(() => {

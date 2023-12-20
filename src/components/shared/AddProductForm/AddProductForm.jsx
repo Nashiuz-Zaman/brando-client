@@ -5,13 +5,13 @@ import ButtonBtn from "../ButtonBtn/ButtonBtn";
 import { useNavigate } from "react-router-dom";
 
 // custom hooks
-import useThemeProvider from "../../../hooks/useThemeProvider";
+import useTheme from "../../../hooks/useTheme";
 
 // data
 import { vercelAddress } from "../../../data/vercelServerData";
 
 const AddProductForm = () => {
-  const { theme } = useThemeProvider();
+  const { theme } = useTheme();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {

@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 
 // custom hooks import
 import useRegistrationForm from "../../../hooks/useRegistrationForm";
-import useThemeProvider from "../../../hooks/useThemeProvider";
+import useTheme from "../../../hooks/useTheme";
 
 // shared component imports
 import ButtonBtn from "./../ButtonBtn/ButtonBtn";
 
 const RegistrationForm = () => {
-  const { theme } = useThemeProvider();
+  const { theme } = useTheme();
 
   const {
     registrationInfo,
