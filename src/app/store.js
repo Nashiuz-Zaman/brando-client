@@ -1,11 +1,14 @@
 //redux
 import { configureStore } from "@reduxjs/toolkit";
-import mobileNavReducer from "../features/MobileNav/mobileNavSlice";
+// reducers
+import mobileNavReducer from "../features/mobileNav/mobileNavSlice";
+import themeReducer from "../features/theme/themeSlice";
 
 // features
 
 export const store = configureStore({
   reducer: {
     mobileNav: mobileNavReducer,
+    theme: themeReducer,
   },
 });
