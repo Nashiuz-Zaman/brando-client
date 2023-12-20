@@ -13,6 +13,10 @@ import ThemeProvider from "./Providers/ThemeProvider";
 import AuthProvider from "./Providers/AuthProvider";
 import LoginRegistratonProvider from "./Providers/LoginRegistrationProvider";
 
+// redux toolkit imports
+import { store } from "./app/store";
+import { Provider } from "react-redux";
+
 // style import
 import "./index.css";
 
@@ -21,7 +25,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <AuthProvider>
       <LoginRegistratonProvider>
         <ThemeProvider>
-          <RouterProvider router={router}></RouterProvider>
+          <Provider store={store}>
+            <RouterProvider router={router}></RouterProvider>
+          </Provider>
         </ThemeProvider>
       </LoginRegistratonProvider>
     </AuthProvider>
