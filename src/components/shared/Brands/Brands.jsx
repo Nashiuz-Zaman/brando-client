@@ -23,8 +23,8 @@ const Brands = ({ brands = [], theme = "light" }) => {
 };
 
 Brands.propTypes = {
-  brands: PropTypes.array.isRequired,
-  theme: PropTypes.array,
+  brands: PropTypes.array,
+  theme: PropTypes.string,
 };
 
 export default Brands;
