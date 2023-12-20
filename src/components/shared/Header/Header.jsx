@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import Brandlogo from "./../Brandlogo/Brandlogo";
 import ThemeChangeBtn from "../ThemeChangeBtn/ThemeChangeBtn";
 import LargeScreenNav from "../LargeScreenNav/LargeScreenNav";
-import MobileMenuBtn from "../MobileMenuBtn/MobileMenuBtn";
 import MobileNav from "../MobileNav/MobileNav";
 import UsernameWithImage from "../UsernameWithImage/UsernameWithImage";
 import ButtonBtn from "../ButtonBtn/ButtonBtn";
@@ -14,7 +13,6 @@ import ButtonBtn from "../ButtonBtn/ButtonBtn";
 import InnerContainer from "./../../container/InnerContainer/InnerContainer";
 
 // hook
-import useMobileNavigation from "../../../hooks/useMobileNavigation";
 import useAuthContext from "../../../hooks/useAuthContext";
 
 // data
@@ -22,9 +20,6 @@ import logoWhite from "./../../../assets/logo/logo-white.webp";
 
 // Extract the value of theme provider in header component so that we can conditionally pass our logo images in the brand logo component
 const Header = ({ logo = "", navigationOptions = [] }) => {
-  // extract mobile navigation functions and state
-  const { mobileNavOpen, openNav, closeNav } = useMobileNavigation();
-
   // extract user information from AUTH context so that we can pass it to username component
   const { user, signOutUser } = useAuthContext();
 
@@ -72,21 +67,17 @@ const Header = ({ logo = "", navigationOptions = [] }) => {
                   </>
                 )}
 
-                <MobileMenuBtn openNavFunction={openNav} />
+                {/* moble navigation menu open and close button are both inside*/}
+                <MobileNav
+                  brandLogoImage={logoWhite}
+                  navigationOptions={navigationOptions}
+                  user={user}
+                  logOutFunction={signOutUser}
+                />
               </div>
             </div>
           </div>
         </InnerContainer>
-
-        {/* moble navigation menu - THE MENU WILL OPEN AND CLOSE according to the state extracted from the custom hook */}
-        <MobileNav
-          brandLogoImage={logoWhite}
-          navigationOptions={navigationOptions}
-          openState={mobileNavOpen}
-          closeNavFunction={closeNav}
-          user={user}
-          logOutFunction={signOutUser}
-        />
       </div>
     </header>
   );
