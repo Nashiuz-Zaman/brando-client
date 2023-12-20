@@ -1,18 +1,21 @@
 // react
-import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { openNav, closeNav } from "../features/MobileNav/mobileNavSlice";
 
 const useMobileNavigation = () => {
-  // declare the state of mobile navigation
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const open = useSelector((store) => {
+    return store.mobileNav.mobileNavOpen;
+  });
 
-  const openNav = () => {
-    setMobileNavOpen(true);
+  const dispatch = useDispatch();
+  const openMobileNav = () => {
+    dispatch(openNav());
   };
-  const closeNav = () => {
-    setMobileNavOpen(false);
+  const closeMobileNav = () => {
+    dispatch(closeNav());
   };
 
-  return { mobileNavOpen, openNav, closeNav };
+  return { open, openMobileNav, closeMobileNav };
 };
 
 export default useMobileNavigation;
