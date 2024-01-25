@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 // shared components
 import Carousel from "./../Carousel/Carousel";
 import LinkBtn from "../LinkBtn/LinkBtn";
