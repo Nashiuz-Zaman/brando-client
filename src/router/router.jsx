@@ -7,11 +7,9 @@ import RootLayout from "../components/layout/RootLayout/RootLayout";
 // page components
 import Home from "../components/pages/Home/Home";
 import Login from "../components/pages/Login/Login";
-import Register from "../components/pages/Registration/Registration";
+import Registration from "./../components/pages/Registration/Registration";
 import ErrorPage from "../components/pages/ErrorPage/ErrorPage";
-import AddProduct from "../components/pages/AddProduct/AddProduct";
 import BrandDetails from "../components/pages/BrandDetails/BrandDetails";
-import UpdateProduct from "../components/pages/UpdateProduct/UpdateProduct";
 import ProductDetails from "../components/pages/ProductDetails/ProductDetails";
 import MyCart from "../components/pages/MyCart/MyCart";
 
@@ -22,6 +20,7 @@ import PrivateRoute from "../components/route/PrivateRoute/PrivateRoute";
 import { vercelAddress } from "../data/vercelServerData";
 
 const router = createBrowserRouter([
+  // main layout
   {
     path: "/",
     element: <RootLayout />,
@@ -34,36 +33,12 @@ const router = createBrowserRouter([
           return fetch("/brands.json");
         },
       },
-      // {
-      //   path: "/login",
-      //   element: <Login />,
-      // },
-      // {
-      //   path: "/register",
-      //   element: <Register />,
-      // },
       {
         path: "/brands/:id",
         element: <BrandDetails />,
         loader: ({ params }) => {
           return fetch(`${vercelAddress}/brands/${params.id}`);
         },
-      },
-      {
-        path: "/brands/:brandId/products/update/:productId",
-        element: (
-          <PrivateRoute>
-            <UpdateProduct />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/add-product",
-        element: (
-          <PrivateRoute>
-            <AddProduct />
-          </PrivateRoute>
-        ),
       },
       {
         path: "/my-cart",
@@ -88,6 +63,14 @@ const router = createBrowserRouter([
             `${vercelAddress}/brands/${brandId}/products/${productId}`
           );
         },
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "register",
+        element: <Registration />,
       },
     ],
   },
