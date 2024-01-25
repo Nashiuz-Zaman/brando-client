@@ -39,12 +39,12 @@ const ProductCard = ({ product, modifyClasses = "", theme = "light" }) => {
           theme={theme}
           url={`/brands/${brandName}/products/details/${_id}`}
         />
-        <LinkBtn
+        {/* <LinkBtn
           text="Update"
           colorTheme="outlinedPrimary"
           modifyClasses="!w-full"
           url={`/brands/${brandName}/products/update/${_id}`}
-        />
+        /> */}
       </div>
     </div>
   );
